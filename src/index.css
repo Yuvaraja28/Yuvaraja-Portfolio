@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Epilogue", sans-serif;
+}
+
+body {
+  margin: 0;
+  color: #fff;
+  background-color: #000;
+  scroll-behavior: smooth;
+}
+
+.righteous {
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+noscript {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Righteous", sans-serif;
+  font-size: 36px;
+  height: 100vh;
+}
