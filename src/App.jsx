@@ -591,7 +591,7 @@ function App() {
               className="flex flex-row flex-wrap justify-center gap-x-6 gap-y-4"
             >
               {socialsData
-                .filter(social => ['Linkedin', 'Discord', 'Twitter', 'Mail'].includes(social.name))
+                .filter(social => social.footer)
                 .map(social =>
                 <motion.a
                   key={social.url}

@@ -1,5 +1,11 @@
 const experienceData = [
   {
+    name: 'Devley',
+    role: 'Founder & CEO',
+    duration: 'February 2021 - Present',
+    link: 'https://devley.yuvaraja.tech/'
+  },
+  {
     name: 'Ridemap',
     role: 'Software Developer - Intern',
     duration: 'June 2024 - Present',
