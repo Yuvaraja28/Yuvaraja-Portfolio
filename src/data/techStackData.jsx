@@ -77,6 +77,11 @@ const techStackData = [
         link: 'https://sass-css.org/',
         src: "https://sass-lang.com/favicon.ico"
       },
+      {
+        title: 'Framer',
+        link: 'https://www.framer.com/',
+        src: "https://framerusercontent.com/images/3ydDYhTbVKKzF5xDzZpZKoMmc.png"
+      }
     ]
   },
   {
