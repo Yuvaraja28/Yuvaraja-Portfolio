@@ -1,15 +1,25 @@
 import './index.css'
 import Portfolio from './pages/portfolio';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { AnimatePresence } from 'motion/react';
+import { Route, Routes } from 'react-router-dom';
+import { PhingerCursor } from '@cursorify/cursors';
+import { CursorifyProvider } from '@cursorify/react';
 
 function App() {
   return (
-    <main>
-      <Routes>
-        <Route path="/" element={<Portfolio />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </main>
+    <CursorifyProvider
+      delay={5}
+      breakpoint={776}
+      cursor={<PhingerCursor />}
+      visibleDefaultCursor={false}
+    >
+      <AnimatePresence>
+        <Routes>
+          <Route path={"/"} element={<Portfolio />} />
+          <Route path={"/:id"} element={<Portfolio />} />
+        </Routes>
+      </AnimatePresence>
+    </CursorifyProvider>
   );
 }
 

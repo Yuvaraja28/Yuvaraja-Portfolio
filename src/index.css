@@ -4,13 +4,13 @@
 
 * {
   font-family: "Epilogue", sans-serif;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   color: #fff;
   background-color: #000;
-  scroll-behavior: smooth;
 }
 
 .righteous {
@@ -27,4 +27,28 @@ noscript {
   font-family: "Righteous", sans-serif;
   font-size: 36px;
   height: 100vh;
+}
+
+.experienceDot::before {
+  content: "";
+  z-index: 1;
+  width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #FFFFFFC0;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }

@@ -7,10 +7,10 @@ const profileData = {
   company: 'Devley',
   location: 'India',
   image: profileImage,
-  updated: 'July 2024',
+  updated: 'December 2024',
   resume: '/resume.pdf',
   mail: 'yuv.the.dev@gmail.com',
-  freelance: 'https://upwork.com/freelancers/~01cab23a6f7f2b4627',
+  company_url: 'https://devley.yuvaraja.tech',
   about_title: [
     'Versatile,',
     'Secure &',
