@@ -29,11 +29,11 @@ export default function Projects() {
         }}
         className="flex flex-row flex-wrap justify-between items-center border-t-4 border-font-color"
       >
-        <span
+        <h2
           className="text-[42px] sm:text-[54px] font-medium"
         >
           Projects
-        </span>
+        </h2>
         <span
           className="flex flex-row items-center gap"
         >

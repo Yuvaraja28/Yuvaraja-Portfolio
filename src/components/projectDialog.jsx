@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { TechBubble } from "./techStack";
-import { SocialBubble } from "./socials";
+import { SocialBubbleBG } from "./socials";
 import { socials } from "../data/socialsData";
 import { useNavigate } from "react-router-dom";
 import projectsData from "../data/projectsData";
@@ -31,7 +31,7 @@ export default function ProjectDialog({ id }) {
       transition={{ duration: 0.2, delay: 0.1 }}
       onClick={closeProjectDialog}
       ref={projectDialogRef}
-      className="flex flex-col items-center px-3 py-12 z-[999] fixed top-0 bg-[#000000cc] h-[100vh] w-full"
+      className="flex flex-col items-center justify-center px-3 pb-2 z-[999] fixed top-0 bg-[#000000cc] h-[100vh] w-full"
     >
       <motion.div
         key={`project-popup-${id}`}
@@ -60,13 +60,12 @@ export default function ProjectDialog({ id }) {
               {project.name}
             </span>
             <div
-              className="flex flex-row items-center justify-center gap-1"
+              className="flex flex-row items-center justify-center gap-1.5"
             >
               {project.links.map(link => 
-                <SocialBubble
+                <SocialBubbleBG
                   key={link.name}
                   social={{ url: link.url, ...socials[link.name] }}
-                  color="white"
                   size={21}
                 />
               )}

@@ -1,5 +1,5 @@
-import techStackData, { technologies } from '../data/techStackData';
 import { IoIosArrowRoundDown } from "react-icons/io";
+import techStackData, { technologies } from '../data/techStackData';
 
 export function TechBubble({ tech, size = 62, hideName = false }) {
   return (
@@ -10,14 +10,15 @@ export function TechBubble({ tech, size = 62, hideName = false }) {
       className="flex flex-col gap-[6px] items-center select-none group w-min"
     >
       <a
-        title={hideName ? tech.title : null}
-        href={hideName ? tech.link : null}
-        target='_blank'      
+        href={tech.link}
+        title={tech.title}
+        target='_blank'
         style={{
           width: size + 'px',
           height: size + 'px',
           padding: parseInt(size / 4.5) + 'px'
         }}
+        aria-label={`This Link takes you to Official ${tech.title} website.`}
         className="bg-social-hover/5 border border-social-hover/10 rounded-2xl shadow-2xl self-center"
       >
         <img
@@ -30,10 +31,7 @@ export function TechBubble({ tech, size = 62, hideName = false }) {
         />
       </a>
       {(!hideName) &&
-        <a
-          href={tech.link}
-          target='_blank'
-          aria-label={`This Link takes you to Official ${tech.title} website.`}
+        <span
           style={{
             fontSize: (15 * (size / 62)) + 'px',
             lineHeight: (18 * (size / 62)) + 'px'
@@ -41,7 +39,7 @@ export function TechBubble({ tech, size = 62, hideName = false }) {
           className='text-center opacity-0 transition-[opacity] duration-300 group-hover:opacity-100'
         >
           {tech.title}
-        </a>
+        </span>
       }
     </div>
   )

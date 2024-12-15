@@ -7,11 +7,11 @@ export default function AboutMe() {
     <div
       className="flex flex-col gap-6 md:gap-[28px] px-[20px] py-[40px] md:p-[70px] bg-font-color text-background-color md:mx-0 rounded-t-[25px] md:rounded-t-[45px] overflow-auto selection:bg-background-color selection:text-font-color"
     >
-      <span
+      <h2
         className="font-medium text-[34px] md:text-[46px] leading-[60px] px-2"
       >
         About Me
-      </span>
+      </h2>
       <div
         className="flex flex-col gap-2 md:block items-center text-[20px] md:text-[22px] leading-[40px]"
       >
@@ -21,8 +21,8 @@ export default function AboutMe() {
           <img
             width={1024}
             height={1024}
-            alt={profileData.name}
             loading='lazy'
+            alt={profileData.fullName}
             style={{ width: '100%', height: '100%' }}
             src={profileData.image}
           />

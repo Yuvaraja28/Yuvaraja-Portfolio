@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
+import { SocialBubbleBG } from "./socials";
+import { socials } from "../data/socialsData";
 import experienceData from '../data/experienceData';
 import { IoIosArrowRoundDown } from "react-icons/io";
 import { getDateDifference, relativeDate } from "../utils/dateMethods";
@@ -14,11 +16,11 @@ export default function Experiences() {
       <div
         className="flex flex-row flex-wrap justify-between items-center border-t-4 border-font-color gap-[6px]"
       >
-        <span
+        <h2
           className="text-[42px] sm:text-[54px] font-medium"
         >
           Experiences
-        </span>
+        </h2>
         <span
           className="flex flex-row items-center gap"
         >
@@ -73,16 +75,35 @@ export default function Experiences() {
                   {experience.location} · {experience.mode}
                 </span>
               </motion.div>
-              <motion.img
-                width={1024}
-                height={1024}
-                loading='lazy'
-                alt={experience.name}
-                src={experience.icon}
-                layoutId={`experience-icon-${experience.name}`}
-                style={{ width: '62px', height: '62px', objectFit: 'contain', borderRadius: '20px', padding: '4px' }}
-                className="border-2 border-white/5"
-              />
+              <div
+                className="flex flex-col items-center gap-2.5"
+              >
+                <motion.img
+                  width={1024}
+                  height={1024}
+                  loading='lazy'
+                  alt={experience.name}
+                  src={experience.icon}
+                  layoutId={`experience-icon-${experience.name}`}
+                  style={{ width: '62px', height: '62px', objectFit: 'contain', borderRadius: '20px', padding: '4px' }}
+                  className="border-2 border-white/5"
+                />
+                {(currentExperience == experience.name) &&
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4, delay: 0.1 }}
+                    layoutId={`experience-link-${experience.name}`}
+                    className="flex flex-row"
+                  >
+                    <SocialBubbleBG
+                      social={{ url: experience.link, ...socials.web }}
+                      size={18}
+                    />
+                  </motion.div>
+                }
+              </div>
             </div>
             {(currentExperience == experience.name) &&
               <motion.div
