@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import profileData from '../data/profileData';
 import { MdArrowOutward } from "react-icons/md";
+import ShowDown from "./showdown";
 
 export default function AboutMe() {
   return (
@@ -58,7 +59,8 @@ export default function AboutMe() {
         className="flex flex-row items-center gap-2 font-semibold border-2 border-background-color rounded-2xl pt-[15px] pb-[12px] px-[24px] text-[17px] select-none transition-[background] duration-[0.4s] hover:bg-background-color hover:text-font-color w-fit"
       >
         See full Resume <MdArrowOutward size={22} />
-      </motion.a>
+      </motion.a>      
+      <ShowDown />
     </div>
   )
 }

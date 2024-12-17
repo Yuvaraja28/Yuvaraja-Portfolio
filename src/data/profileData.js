@@ -1,12 +1,10 @@
-import profileImage from '../assets/images/profile.jpg'
-
 const profileData = {
   name: 'Yuvaraja',
   fullName: 'Yuvaraja Murali',
   role: 'Full Stack Developer',
   company: 'Devley',
   location: 'India',
-  image: profileImage,
+  image: 'assets/images/profile.jpg',
   updated: 'December 2024',
   resume: '/resume.pdf',
   mail: 'yuv.the.dev@gmail.com',

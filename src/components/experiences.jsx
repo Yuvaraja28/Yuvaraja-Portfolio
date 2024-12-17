@@ -38,6 +38,10 @@ export default function Experiences() {
               cursor: 'pointer',
               borderRadius: (currentExperience == experience.name) ? '18px' : '22px'
             }}
+            transition={{
+              damping: 14,
+              type: 'spring'
+            }}
             layoutId={`experience-div-${experience.name}`}
             onClick={() => setCurrentExperience((prev) => (prev == experience.name) ? null : experience.name)}
             aria-label={`This link takes you to the companies ${experience.name}'s website that i've worked `}

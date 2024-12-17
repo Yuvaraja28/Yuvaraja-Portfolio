@@ -1,6 +1,3 @@
-import DevleyImage from '../assets/experiences/devley/devley.png';
-import IgniteImage from '../assets/experiences/ignite/ignite.png';
-
 const experienceData = [
   {
     name: 'Devley',
@@ -8,7 +5,7 @@ const experienceData = [
     location: 'India',
     mode: 'Remote',
     type: 'Freelance',
-    icon: DevleyImage,
+    icon: 'assets/experiences/devley/devley.png',
     color: '#0000ff',
     positions: [
       {
@@ -33,7 +30,7 @@ const experienceData = [
     location: 'Pondicherry, India',
     mode: 'On-Site',
     type: 'Internship',
-    icon: IgniteImage,
+    icon: 'assets/experiences/ignite/ignite.png',
     color: '#ff0000',
     positions: [
       {

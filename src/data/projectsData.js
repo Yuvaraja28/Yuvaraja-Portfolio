@@ -1,22 +1,9 @@
-import TDImage from '../assets/projects/td/td.png';
-import TDBanner from '../assets/projects/td/td-banner.png';
-import devleyImage from '../assets/projects/devley/devley.png';
-import devleyBanner from '../assets/projects/devley/devley-banner.png'
-import frixImage from '../assets/projects/frix-cloud/frix-cloud.png';
-import frixBanner from '../assets/projects/frix-cloud/frix-cloud-banner.png';
-import discoPlayerImage from '../assets/projects/disco-player/disco-player.png';
-import discoPlayerBanner from '../assets/projects/disco-player/disco-player-banner.png';
-import studentConnect from '../assets/projects/students-connect/students-connect.png';
-import studentConnectBanner from '../assets/projects/students-connect/students-connect-banner.png';
-import pterodactylTrialServers from '../assets/projects/trial-servers/trial-servers.png';
-import pterodactylTrialServersBanner from '../assets/projects/trial-servers/trial-servers-banner.png';
-
 const projectsData = {
   devley: {
     name: 'Devley',
     title: 'Digital Marketplace',
-    showcase: devleyImage,
-    banner: devleyBanner,
+    showcase: 'assets/projects/devley/devley.png',
+    banner: 'assets/projects/devley/devley-banner.png',
     links: [
       {
         name: 'web',
@@ -29,8 +16,8 @@ const projectsData = {
   pts: { 
     name: 'Pterodactyl Trial Servers',
     title: 'Cloud Servers',
-    showcase: pterodactylTrialServers,
-    banner: pterodactylTrialServersBanner,
+    showcase: 'assets/projects/trial-servers/trial-servers.png',
+    banner: 'assets/projects/trial-servers/trial-servers-banner.png',
     links: [
       {
         name: 'github',
@@ -47,8 +34,8 @@ const projectsData = {
   fic: { 
     name: 'Frix Cloud',
     title: 'Remote Server Management',
-    showcase: frixImage,
-    banner: frixBanner,
+    showcase: 'assets/projects/frix-cloud/frix-cloud.png',
+    banner: 'assets/projects/frix-cloud/frix-cloud-banner.png',
     links: [
       {
         name: 'github',
@@ -61,8 +48,8 @@ const projectsData = {
   dip: {
     name: 'Diso Player',
     title: 'Spotify Inspired',
-    showcase: discoPlayerImage,
-    banner: discoPlayerBanner,
+    showcase: 'assets/projects/disco-player/disco-player.png',
+    banner: 'assets/projects/disco-player/disco-player-banner.png',
     links: [
       {
         name: 'web',
@@ -79,8 +66,8 @@ const projectsData = {
   tds: { 
     name: 'TD Problem Solver',
     title: 'Thermodynamics',
-    showcase: TDImage,
-    banner: TDBanner,
+    showcase: 'assets/projects/td/td.png',
+    banner: 'assets/projects/td/td-banner.png',
     links: [
       {
         name: 'web',
@@ -97,8 +84,8 @@ const projectsData = {
   stc: {
     active: true,
     name: 'Student Connect',
-    showcase: studentConnect,
-    banner: studentConnectBanner,
+    showcase: 'assets/projects/students-connect/students-connect.png',
+    banner: 'assets/projects/students-connect/students-connect-banner.png',
     links: [
       {
         name: 'github',
