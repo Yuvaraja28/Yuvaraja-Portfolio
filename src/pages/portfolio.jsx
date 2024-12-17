@@ -5,12 +5,11 @@ import AboutMe from '../components/aboutme.jsx';
 import Landing from '../components/landing.jsx';
 import Projects from '../components/projects.jsx';
 import TechStack from '../components/techStack.jsx';
-import { PhingerCursor } from '@cursorify/cursors';
-import { CursorifyProvider } from '@cursorify/react';
 import Experiences from '../components/experiences.jsx';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import ProjectDialog from '../components/projectDialog.jsx'
 import { useMotionValueEvent, useScroll } from "motion/react";
+import CustomCursor from '../components/customCursor.jsx';
 
 function Portfolio() {
   const [showFooter, setShowFooter] = React.useState(false)
@@ -35,12 +34,7 @@ function Portfolio() {
         scrollSensitivity: 100
       }}
     >
-      <CursorifyProvider
-        delay={5}
-        breakpoint={776}
-        cursor={<PhingerCursor />}
-        visibleDefaultCursor={false}
-      >
+      <CustomCursor>
         <Landing />
         <div className="z-[99] relative bg-black rounded-b-[20px]">
           <AboutMe />
@@ -54,7 +48,7 @@ function Portfolio() {
         </div>
         {(showFooter) && <Footer />}
         {(id != null) && <ProjectDialog id={id} />}
-      </CursorifyProvider>
+      </CustomCursor>
     </ReactLenis>
   )
 }

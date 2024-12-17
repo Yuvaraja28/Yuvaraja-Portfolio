@@ -11,7 +11,7 @@ const experienceData = [
       {
         role: 'Founder & CEO',
         duration: {
-          start: new Date('February 2021')
+          start: new Date('02-01-2021')
         },
         content: 'Total sales to date: over 120+\nTotal company revenue: $1,200+\nTotal customers in the marketplace: 230+',
         points: [
@@ -36,7 +36,7 @@ const experienceData = [
       {
         role: 'FullStack App Developer',
         duration: {
-          start: new Date('June 2024')
+          start: new Date('06-01-2024')
         },
         points: [
           '• Worked on the LucasTVS project, developing a digital test platform with a dashboard to monitor and evaluate worker’s performance via camera feed.',
@@ -47,8 +47,8 @@ const experienceData = [
       {
         role: 'Technical Support',
         duration: {
-          start: new Date('March 2024'),
-          end: new Date('June 2024'),
+          start: new Date('03-01-2024'),
+          end: new Date('06-01-2024'),
         },
         points: [
           '• Enhanced the Bus and User Management admin panel by adding features and fixing bugs to improve functionality and user experience'
