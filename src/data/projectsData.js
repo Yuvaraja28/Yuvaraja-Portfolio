@@ -7,7 +7,7 @@ const projectsData = {
     links: [
       {
         name: 'web',
-        url: 'https://devley.yuvaraja.tech',
+        url: 'https://devley.1he.dev',
       }
     ],
     technologies: ['next', 'react', 'node', 'motion', 'mongodb', 'websocket', 'cfWorkers', 'discordOAuth2', 'git'],
@@ -71,7 +71,7 @@ const projectsData = {
     links: [
       {
         name: 'web',
-        url: 'https://td.yuvaraja.tech',
+        url: 'https://td.1he.dev',
       },
       {
         name: 'github',

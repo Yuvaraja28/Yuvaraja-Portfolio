@@ -1,7 +1,7 @@
 const experienceData = [
   {
     name: 'Devley',
-    link: 'https://devley.yuvaraja.tech/',
+    link: 'https://devley.1he.dev/',
     location: 'India',
     mode: 'Remote',
     type: 'Freelance',
@@ -15,7 +15,7 @@ const experienceData = [
         },
         content: 'Total sales to date: over 120+\nTotal company revenue: $1,200+\nTotal customers in the marketplace: 230+',
         points: [
-          '• Running and maintaining devley.yuvaraja.tech: A software development company, committed to delivering innovative IT solutions.',
+          '• Running and maintaining devley.1he.dev: A software development company, committed to delivering innovative IT solutions.',
           '• Conceptualized, Designed, Built and Launched the entire website.',
           '• Developed all the products that are available in the marketplace.',
           '• Leading a Premier Software Development Company: Focusing on Discord-based customers.',

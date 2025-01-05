@@ -8,7 +8,7 @@ const profileData = {
   updated: 'December 2024',
   resume: '/resume.pdf',
   mail: 'yuv.the.dev@gmail.com',
-  company_url: 'https://devley.yuvaraja.tech',
+  company_url: 'https://devley.1he.dev',
   about_title: [
     'Versatile,',
     'Secure &',
