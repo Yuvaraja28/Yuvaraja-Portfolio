@@ -130,7 +130,7 @@ export default function Landing() {
               cursor: 'pointer'
             }}
             aria-label={`This Link will take you to ${profileData.name}'s Resume`}
-            className="font-semibold rounded-full pt-[10px] pb-[6px] px-[32px] text-[18px] select-none transition-[background] duration-[0.4s] border-2 border-white bg-black text-white hover:border-black hover:bg-white hover:text-black text-center w-fit"
+            className="font-semibold rounded-full pt-[10px] pb-[6px] px-[32px] text-[18px] select-none transition-[background] duration-[0.4s] border-2 hover:border-white hover:bg-black hover:text-white border-white bg-white text-black text-center w-fit"
           >
             Resume
           </motion.a>

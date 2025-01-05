@@ -36,7 +36,8 @@ const experienceData = [
       {
         role: 'FullStack App Developer',
         duration: {
-          start: new Date('06-01-2024')
+          start: new Date('06-27-2024'),
+          end: new Date('09-27-2024'),
         },
         points: [
           '• Worked on the LucasTVS project, developing a digital test platform with a dashboard to monitor and evaluate worker’s performance via camera feed.',
@@ -47,8 +48,8 @@ const experienceData = [
       {
         role: 'Technical Support',
         duration: {
-          start: new Date('03-01-2024'),
-          end: new Date('06-01-2024'),
+          start: new Date('03-25-2024'),
+          end: new Date('06-25-2024'),
         },
         points: [
           '• Enhanced the Bus and User Management admin panel by adding features and fixing bugs to improve functionality and user experience'

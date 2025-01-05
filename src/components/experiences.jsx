@@ -1,5 +1,3 @@
-import React from "react";
-import { motion } from "motion/react";
 import { SocialBubbleBG } from "./socials";
 import { socials } from "../data/socialsData";
 import experienceData from '../data/experienceData';
@@ -7,8 +5,6 @@ import { IoIosArrowRoundDown } from "react-icons/io";
 import { getDateDifference, relativeDate } from "../utils/dateMethods";
 
 export default function Experiences() {
-  const [currentExperience, setCurrentExperience] = React.useState(null)
-
   return (
     <div
       className="flex flex-col gap-4"
@@ -31,28 +27,19 @@ export default function Experiences() {
         className="flex flex-col gap-4"
       >
         {experienceData.map((experience) =>
-          <motion.div
-            layout
+          <div
             key={experience.name}
             style={{
-              cursor: 'pointer',
-              borderRadius: (currentExperience == experience.name) ? '18px' : '22px'
+              borderRadius: '18px'
             }}
-            transition={{
-              damping: 14,
-              type: 'spring'
-            }}
-            layoutId={`experience-div-${experience.name}`}
-            onClick={() => setCurrentExperience((prev) => (prev == experience.name) ? null : experience.name)}
             aria-label={`This link takes you to the companies ${experience.name}'s website that i've worked `}
             className={`flex flex-col select-none group bg-font-color/5 border border-white/5 drop-shadow-md pl-5 px-4 py-3 sm:pl-6 sm:px-5 sm:py-4`}
           >
             <div
               className="flex flex-row justify-between gap-4 w-full"
             >
-              <motion.div
+              <div
                 className="flex flex-col"
-                layoutId={`experience-content-div-${experience.name}`}
               >
                 <span
                   className="text-[20px] sm:text-[21px] font-medium"
@@ -78,99 +65,89 @@ export default function Experiences() {
                 >
                   {experience.location} · {experience.mode}
                 </span>
-              </motion.div>
+              </div>
               <div
                 className="flex flex-col items-center gap-2.5"
               >
-                <motion.img
+                <img
                   width={1024}
                   height={1024}
                   loading='lazy'
                   alt={experience.name}
                   src={experience.icon}
-                  layoutId={`experience-icon-${experience.name}`}
                   style={{ width: '62px', height: '62px', objectFit: 'contain', borderRadius: '20px', padding: '4px' }}
                   className="border-2 border-white/5"
                 />
-                {(currentExperience == experience.name) &&
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4, delay: 0.1 }}
-                    layoutId={`experience-link-${experience.name}`}
-                    className="flex flex-row"
-                  >
-                    <SocialBubbleBG
-                      social={{ url: experience.link, ...socials.web }}
-                      size={18}
-                    />
-                  </motion.div>
-                }
+                <div
+                  className="flex flex-row"
+                >
+                  <SocialBubbleBG
+                    social={{ url: experience.link, ...socials.web }}
+                    size={18}
+                  />
+                </div>
               </div>
             </div>
-            {(currentExperience == experience.name) &&
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="flex flex-col gap-2.5 py-2"
-              >
-                {experience.positions.map((position, pos_index) =>
+            <div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="flex flex-col gap-2.5 py-2"
+            >
+              {experience.positions.map((position, pos_index) =>
+                <div
+                  key={pos_index}
+                  className="flex flex-col gap-0.5 experienceDot"
+                >
+                  <span
+                    className="text-[18px] font-medium opacity-95 pl-6"
+                  >
+                    {position.role}
+                  </span>
                   <div
-                    key={pos_index}
-                    className="flex flex-col gap-0.5 experienceDot"
+                    className="flex flex-row"
                   >
                     <span
-                      className="text-[18px] font-medium opacity-95 pl-6"
-                    >
-                      {position.role}
-                    </span>
+                      className="w-[1px] h-[initial] bg-white/50 rounded-lg ml-[3px]"
+                    />
                     <div
-                      className="flex flex-row"
+                      className="flex flex-col gap-2 opacity-90 pl-5"
                     >
                       <span
-                        className="w-[1px] h-[initial] bg-white/50 rounded-lg ml-[3px]"
-                      />
-                      <div
-                        className="flex flex-col gap-2 opacity-90 pl-5"
+                        className="text-[15px] font-light opacity-80"
                       >
-                        <span
-                          className="text-[15px] font-light opacity-80"
-                        >
-                          {(position.duration?.end == null) ?
-                            `${relativeDate(position.duration.start)} - Present · ${getDateDifference(position.duration.start, new Date())}`
-                            :
-                            `${relativeDate(position.duration.start)} - ${relativeDate(position.duration.end)} · ${getDateDifference(position.duration.start, position.duration.end)}`
-                          }
-                        </span>
-                        {(position?.content) &&
-                          <span
-                            className='font-light whitespace-pre-line'
-                          >
-                            {position.content}
-                          </span>
+                        {(position.duration?.end == null) ?
+                          `${relativeDate(position.duration.start)} - Present · ${getDateDifference(position.duration.start, new Date())}`
+                          :
+                          `${relativeDate(position.duration.start)} - ${relativeDate(position.duration.end)} · ${getDateDifference(position.duration.start, position.duration.end)}`
                         }
-                        <div
-                          className="flex flex-col gap-1"
+                      </span>
+                      {(position?.content) &&
+                        <span
+                          className='font-light whitespace-pre-line'
                         >
-                          {position.points.map((point, point_index) => 
-                            <span
-                              key={point_index}
-                              className="font-light"
-                            >
-                              {point}
-                            </span>
-                          )}
-                        </div>
+                          {position.content}
+                        </span>
+                      }
+                      <div
+                        className="flex flex-col gap-1"
+                      >
+                        {position.points.map((point, point_index) => 
+                          <span
+                            key={point_index}
+                            className="font-light"
+                          >
+                            {point}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
-                )}
-              </motion.div>
-            }
-          </motion.div>
+                </div>
+              )}
+            </div>
+          </div>
         )}
       </div>
     </div>

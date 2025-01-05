@@ -38,15 +38,7 @@ export default function Header() {
           {profileData.role}
         </motion.span>
       </div>
-      <motion.a
-        animate={{
-          opacity: [1, 0, 1]
-        }}
-        transition={{
-          duration: 2.5,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
+      <a
         target='_blank'
         style={{
           cursor: 'pointer'
@@ -56,7 +48,7 @@ export default function Header() {
         aria-label='This is the Mail ID Link.'
       >
         Freelancer
-      </motion.a>
+      </a>
     </div>
   )
 }
