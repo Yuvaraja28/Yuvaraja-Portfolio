@@ -11,7 +11,7 @@ const projectsData = {
       }
     ],
     technologies: ['next', 'react', 'node', 'motion', 'mongodb', 'websocket', 'cfWorkers', 'discordOAuth2', 'git'],
-    description: "As the founder of Devley, I lead a digital marketplace offering solutions like Devactyl Bot and MineCore Bot. The dashboard uses Discord OAuth for authentication and MongoDB for database management, serving verified customers."
+    description: "As the founder of Devley, I lead a digital marketplace offering innovative products. The dashboard uses Paypal for Payment Processing, Discord OAuth for authentication and MongoDB for database management, serving verified customers."
   },
   pts: { 
     name: 'Pterodactyl Trial Servers',
