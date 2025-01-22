@@ -9,7 +9,6 @@ export default function CustomCursor({ children }) {
       </>
       :
       <CursorifyProvider
-        delay={0}
         breakpoint={776}
         cursor={<PhingerCursor />}
         visibleDefaultCursor={false}
