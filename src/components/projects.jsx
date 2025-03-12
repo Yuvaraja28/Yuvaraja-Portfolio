@@ -48,7 +48,7 @@ export default function Projects() {
           .filter(project => 
             (project[1]?.active == undefined) ? true : project[1].active
           )
-          .map(([projectKey, project]) => 
+          .map(([projectKey, project], idx) => 
           <motion.div
             initial={{
               translateX: 200,
@@ -59,11 +59,8 @@ export default function Projects() {
               opacity: 1
             }}
             transition={{
-              duration: 1,
+              duration: (0.2*idx),
               type: 'spring'
-            }}
-            whileHover={{
-              scale: 0.97
             }}
             style={{
               cursor: 'pointer'

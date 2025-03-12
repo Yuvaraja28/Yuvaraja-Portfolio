@@ -1,9 +1,23 @@
 const projectsData = {
+  mitilence: {
+    name: "Mitilence'25",
+    title: 'MVIT',
+    showcase: 'assets/projects/mitilence/mitilence.png',
+    banner: ['assets/projects/mitilence/mitilence-banner.png', 'assets/projects/mitilence/mitilence-banner-2.png', 'assets/projects/mitilence/mitilence-banner-3.png', 'assets/projects/mitilence/mitilence-banner-4.png'],
+    links: [
+      {
+        name: 'web',
+        url: 'https://mitilence.1he.dev',
+      }
+    ],
+    technologies: ['next', 'react', 'node', 'motion', 'firebase', 'git'],
+    description: "Developed the Mitilence event management website, enabling users to pre-register for departmental events and providing organizers with a streamlined participant check-in process and comprehensive data management through an intuitive admin and organizer dashboard."
+  },
   devley: {
     name: 'Devley',
     title: 'Digital Marketplace',
     showcase: 'assets/projects/devley/devley.png',
-    banner: 'assets/projects/devley/devley-banner.png',
+    banner: ['assets/projects/devley/devley-banner.png'],
     links: [
       {
         name: 'web',
@@ -11,13 +25,13 @@ const projectsData = {
       }
     ],
     technologies: ['next', 'react', 'node', 'motion', 'mongodb', 'websocket', 'cfWorkers', 'discordOAuth2', 'git'],
-    description: "As the founder of Devley, I lead a digital marketplace offering innovative products. The dashboard uses Paypal for Payment Processing, Discord OAuth for authentication and MongoDB for database management, serving verified customers."
+    description: "Developed a digital marketplace offering purchase digital products. The dashboard uses Paypal for Payment Processing, Discord OAuth for authentication and MongoDB for database management, serving verified customers."
   },
   pts: { 
     name: 'Pterodactyl Trial Servers',
     title: 'Cloud Servers',
     showcase: 'assets/projects/trial-servers/trial-servers.png',
-    banner: 'assets/projects/trial-servers/trial-servers-banner.png',
+    banner: ['assets/projects/trial-servers/trial-servers-banner.png'],
     links: [
       {
         name: 'github',
@@ -35,7 +49,7 @@ const projectsData = {
     name: 'Frix Cloud',
     title: 'Remote Server Management',
     showcase: 'assets/projects/frix-cloud/frix-cloud.png',
-    banner: 'assets/projects/frix-cloud/frix-cloud-banner.png',
+    banner: ['assets/projects/frix-cloud/frix-cloud-banner.png'],
     links: [
       {
         name: 'github',
@@ -49,7 +63,7 @@ const projectsData = {
     name: 'Diso Player',
     title: 'Spotify Inspired',
     showcase: 'assets/projects/disco-player/disco-player.png',
-    banner: 'assets/projects/disco-player/disco-player-banner.png',
+    banner: ['assets/projects/disco-player/disco-player-banner.png'],
     links: [
       {
         name: 'web',
@@ -67,7 +81,7 @@ const projectsData = {
     name: 'TD Problem Solver',
     title: 'Thermodynamics',
     showcase: 'assets/projects/td/td.png',
-    banner: 'assets/projects/td/td-banner.png',
+    banner: ['assets/projects/td/td-banner.png'],
     links: [
       {
         name: 'web',
@@ -85,7 +99,7 @@ const projectsData = {
     active: true,
     name: 'Student Connect',
     showcase: 'assets/projects/students-connect/students-connect.png',
-    banner: 'assets/projects/students-connect/students-connect-banner.png',
+    banner: ['assets/projects/students-connect/students-connect-banner.png'],
     links: [
       {
         name: 'github',

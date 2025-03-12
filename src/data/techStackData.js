@@ -20,11 +20,6 @@ export const technologies = {
     link: 'https://en.wikipedia.org/wiki/C_(programming_language)',
     src: "https://www.learn-c.org/static/img/favicons/learn-c.org.ico"
   },
-  cpp: {
-    title: 'C++',
-    link: 'https://isocpp.org/',
-    src: "https://isocpp.org/favicon"
-  },
   java: {
     title: 'Java',
     link: 'https://www.oracle.com/java/technologies/',
@@ -221,7 +216,6 @@ const techStackData = [
       'js',
       'ts',
       'c',
-      'cpp',
       'java',
       'go'
     ]

@@ -17,14 +17,12 @@ export default function AboutMe() {
         className="flex flex-col gap-2 md:block items-center text-[20px] md:text-[22px] leading-[40px]"
       >
         <span
-          className="float-left md:mr-8 mb-4 rounded-[28px] lg:rounded-[42px] h-[260px] w-[260px] min-w-fit lg:h-[320px] lg:w-[320px] overflow-auto select-none"
+          className="float-left md:mr-8 mb-4 rounded-[28px] lg:rounded-[42px] h-[320px] w-[260px] min-w-fit lg:h-[340px] lg:w-[260px] overflow-auto select-none"
         >
           <img
-            width={1024}
-            height={1024}
             loading='lazy'
             alt={profileData.fullName}
-            style={{ width: '100%', height: '100%' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             src={profileData.image}
           />
         </span>

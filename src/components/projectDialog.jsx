@@ -6,6 +6,7 @@ import { socials } from "../data/socialsData";
 import { useNavigate } from "react-router-dom";
 import projectsData from "../data/projectsData";
 import { technologies } from "../data/techStackData";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 
 export default function ProjectDialog({ id }) {
   const project = projectsData[id];
@@ -14,7 +15,8 @@ export default function ProjectDialog({ id }) {
   
   const navigation = useNavigate()
   const projectDialogRef = React.useRef(null);
-  
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0)
+
   function closeProjectDialog(e) {
     if (projectDialogRef.current == null) return;
     if (e.target == projectDialogRef.current) {
@@ -31,22 +33,37 @@ export default function ProjectDialog({ id }) {
       transition={{ duration: 0.2, delay: 0.1 }}
       onClick={closeProjectDialog}
       ref={projectDialogRef}
-      className="flex flex-col items-center justify-center px-3 pb-2 z-[999] fixed top-0 bg-[#000000cc] h-[100vh] w-full"
+      className="flex flex-col items-center justify-center px-3 pb-2 z-[999] fixed top-0 bg-[#000000cc] h-[100vh] w-full select-none"
     >
       <motion.div
         key={`project-popup-${id}`}
         layoutId={`project-popup-${id}`}
         className="flex flex-col items-center bg-[#101011] border border-white/5 rounded-[20px] drop-shadow-xl overflow-auto md:max-w-[580px]"
       >
-        <motion.img
-          width={1920}
-          height={1080}
-          loading='lazy'
-          src={project.banner}
-          alt={project.title}
-          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-          layoutId={`project-image-popup-${id}`}
-        />
+        <div
+          className="flex flex-row w-full items-center relative"
+        >
+          {project.banner.map((banner, banner_idx) =>
+            <img
+              width={1920}
+              height={1080}
+              loading='lazy'
+              src={banner}
+              alt={project.title}
+              key={banner_idx}
+              style={{ width: '100%', height: '100%', objectFit: 'contain', display: (banner_idx == currentImageIndex) ? 'block' : 'none' }}
+            />
+          )}
+        </div>
+        {(project.banner.length > 1) &&
+          <div
+            className="flex flex-row gap-3 mt-4"
+          >
+            {Array.from({ length: project.banner.length }).map((_, idx) => 
+              <span key={idx} className="w-2.5 h-2.5 border border-white rounded-full" onClick={() => setCurrentImageIndex(idx)} style={{ cursor: 'pointer', background: (idx ==currentImageIndex) ? 'white' : 'transparent' }}></span>
+            )}
+          </div>
+        }
         <motion.div
           animate
           className="flex flex-col gap-2 px-6 pt-4 pb-5"

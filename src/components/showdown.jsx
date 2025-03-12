@@ -1,5 +1,3 @@
-import { motion } from "motion/react";
-
 const showdownImages = [
   "assets/showdown/vit_chennai.jpg",
   "assets/showdown/mvit_ignite.jpg",

@@ -1,30 +1,5 @@
 const experienceData = [
   {
-    name: 'Devley',
-    link: 'https://devley.1he.dev/',
-    location: 'India',
-    mode: 'Remote',
-    type: 'Freelance',
-    icon: 'assets/experiences/devley/devley.png',
-    color: '#0000ff',
-    positions: [
-      {
-        role: 'Founder & CEO',
-        duration: {
-          start: new Date('02-01-2021')
-        },
-        content: 'Total sales to date: over 120+\nTotal company revenue: $1,200+\nTotal customers in the marketplace: 230+',
-        points: [
-          '• Running and maintaining devley.1he.dev: A software development company, committed to delivering innovative IT solutions.',
-          '• Conceptualized, Designed, Built and Launched the entire website.',
-          '• Developed all the products that are available in the marketplace.',
-          '• Leading a Premier Software Development Company: Focusing on Discord-based customers.',
-          '• Handling All Customer Support Tickets: Ensuring exceptional service and satisfaction',
-        ]
-      }
-    ]
-  },
-  {
     name: 'Ridemap',
     link: 'https://ridemap.in/',
     location: 'Pondicherry, India',
@@ -34,7 +9,7 @@ const experienceData = [
     color: '#ff0000',
     positions: [
       {
-        role: 'FullStack App Developer',
+        role: 'Full Stack App Developer',
         duration: {
           start: new Date('06-27-2024'),
           end: new Date('09-27-2024'),
@@ -57,6 +32,29 @@ const experienceData = [
       }
     ]
   },
+  {
+    name: 'Devley',
+    link: 'https://devley.1he.dev/',
+    location: 'India',
+    mode: 'Remote',
+    type: 'Freelance',
+    icon: 'assets/experiences/devley/devley.png',
+    color: '#0000ff',
+    positions: [
+      {
+        role: 'Full Stack Developer',
+        duration: {
+          start: new Date('02-01-2021')
+        },
+        points: [
+          '• Running and maintaining devley.1he.dev.',
+          '• Conceptualized, Designed, Built and Launched the entire website.',
+          '• Developed all the products that are available in the marketplace.',
+          '• Handling All Customer Support Tickets: Ensuring exceptional service and satisfaction',
+        ]
+      }
+    ]
+  }
 ]
 
 export default experienceData
