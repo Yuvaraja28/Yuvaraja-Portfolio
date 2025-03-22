@@ -3,7 +3,7 @@ const projectsData = {
     name: "Mitilence'25",
     title: 'MVIT',
     showcase: 'assets/projects/mitilence/mitilence.png',
-    banner: ['assets/projects/mitilence/mitilence-banner.png', 'assets/projects/mitilence/mitilence-banner-2.png', 'assets/projects/mitilence/mitilence-banner-3.png', 'assets/projects/mitilence/mitilence-banner-4.png'],
+    banner: ['assets/projects/mitilence/mitilence-banner.png', 'https://www.youtube.com/embed/eGJpRt2c2no?si=yqYhNTA0rwPbkJ80', 'assets/projects/mitilence/mitilence-banner-2.png', 'assets/projects/mitilence/mitilence-banner-3.png', 'assets/projects/mitilence/mitilence-banner-4.png', 'assets/projects/mitilence/mitilence-figma.jpeg'],
     links: [
       {
         name: 'web',

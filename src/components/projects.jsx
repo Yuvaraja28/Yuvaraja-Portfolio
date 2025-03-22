@@ -48,7 +48,7 @@ export default function Projects() {
           .filter(project => 
             (project[1]?.active == undefined) ? true : project[1].active
           )
-          .map(([projectKey, project], idx) => 
+          .map(([projectKey, project]) => 
           <motion.div
             initial={{
               translateX: 200,
@@ -59,7 +59,7 @@ export default function Projects() {
               opacity: 1
             }}
             transition={{
-              duration: (0.2*idx),
+              duration: 0.8,
               type: 'spring'
             }}
             style={{

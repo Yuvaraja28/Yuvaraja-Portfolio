@@ -44,15 +44,18 @@ export default function ProjectDialog({ id }) {
           className="flex flex-row w-full items-center relative"
         >
           {project.banner.map((banner, banner_idx) =>
-            <img
-              width={1920}
-              height={1080}
-              loading='lazy'
-              src={banner}
-              alt={project.title}
-              key={banner_idx}
-              style={{ width: '100%', height: '100%', objectFit: 'contain', display: (banner_idx == currentImageIndex) ? 'block' : 'none' }}
-            />
+            (banner.includes("https://www.youtube")) ?
+              <iframe src={banner} key={banner_idx} className="w-full h-72 lg:h-96" allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share" frameBorder="0"></iframe>
+              :
+              <img
+                width={1920}
+                height={1080}
+                loading='lazy'
+                src={banner}
+                alt={project.title}
+                key={banner_idx}
+                style={{ width: '100%', height: '100%', objectFit: 'contain', display: (banner_idx == currentImageIndex) ? 'block' : 'none' }}
+              />
           )}
         </div>
         {(project.banner.length > 1) &&
