@@ -45,7 +45,16 @@ export default function ProjectDialog({ id }) {
         >
           {project.banner.map((banner, banner_idx) =>
             (banner.includes("https://www.youtube")) ?
-              <iframe src={banner} key={banner_idx} className="w-full h-72 lg:h-96" allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share" frameBorder="0"></iframe>
+              <iframe
+              src={banner}
+                key={banner_idx}
+                frameBorder="0"
+                className="w-full h-72 lg:h-96"
+                style={{
+                  display: (banner_idx == currentImageIndex) ? 'block' : 'none'
+                }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share"
+              />
               :
               <img
                 width={1920}
