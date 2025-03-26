@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from "motion/react";
 import profileData from '../data/profileData';
 import socialsData, { socials } from '.././data/socialsData';
 import { TbCopy, TbCopyCheckFilled } from "react-icons/tb";

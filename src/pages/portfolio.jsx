@@ -7,9 +7,9 @@ import Projects from '../components/projects.jsx';
 import TechStack from '../components/techStack.jsx';
 import Experiences from '../components/experiences.jsx';
 import { ReactLenis } from '@studio-freight/react-lenis';
+import CustomCursor from '../components/customCursor.jsx';
 import ProjectDialog from '../components/projectDialog.jsx'
 import { useMotionValueEvent, useScroll } from "motion/react";
-import CustomCursor from '../components/customCursor.jsx';
 
 function Portfolio() {
   const [showFooter, setShowFooter] = React.useState(false)

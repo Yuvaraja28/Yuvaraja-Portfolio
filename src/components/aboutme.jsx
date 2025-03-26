@@ -1,7 +1,7 @@
+import ShowDown from "./showdown";
 import { motion } from "motion/react";
 import profileData from '../data/profileData';
 import { MdArrowOutward } from "react-icons/md";
-import ShowDown from "./showdown";
 
 export default function AboutMe() {
   return (
