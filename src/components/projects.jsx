@@ -78,7 +78,7 @@ export default function Projects() {
               alt={project.name}
               loading='lazy'
               layoutId={`project-image-popup-${projectKey}`}
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              style={{ width: '100%', height: '265px', objectFit: 'contain' }}
             />
             <div
               className="flex flex-col gap-[4px] mx-2"

@@ -5,7 +5,7 @@ const profileData = {
   company: 'Devley',
   location: 'India',
   image: 'assets/images/profile.jpg',
-  updated: 'March 2025',
+  updated: 'April 2025',
   resume: '/resume.pdf',
   mail: 'yuv.the.dev@gmail.com',
   company_url: 'https://devley.1he.dev',

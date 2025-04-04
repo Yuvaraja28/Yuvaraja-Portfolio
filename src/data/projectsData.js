@@ -17,7 +17,7 @@ const projectsData = {
     name: 'Devley',
     title: 'Digital Marketplace',
     showcase: 'assets/projects/devley/devley.png',
-    banner: ['assets/projects/devley/devley-banner.png'],
+    banner: ['assets/projects/devley/devley-banner.png', 'assets/projects/devley/devley-banner-2.png', 'assets/projects/devley/devley-banner-3.png', 'assets/projects/devley/devley-banner-4.png'],
     links: [
       {
         name: 'web',
@@ -26,6 +26,20 @@ const projectsData = {
     ],
     technologies: ['next', 'react', 'node', 'motion', 'mongodb', 'websocket', 'cfWorkers', 'discordOAuth2', 'git'],
     description: "Developed a digital marketplace offering purchase digital products. The dashboard uses Paypal for Payment Processing, Discord OAuth for authentication and MongoDB for database management, serving verified customers."
+  },
+  ridemap: {
+    name: 'Ridemap',
+    title: 'Mobile App',
+    showcase: 'assets/projects/ridemap/ridemap.png',
+    banner: ['assets/projects/ridemap/ridemap.png', 'assets/projects/ridemap/ridemap-2.png', 'assets/projects/ridemap/ridemap-3.png', 'assets/projects/ridemap/ridemap-4.png', 'assets/projects/ridemap/ridemap-5.png', 'assets/projects/ridemap/ridemap-6.png'],
+    links: [
+      {
+        name: 'playstore',
+        url: 'https://play.google.com/store/apps/details?id=com.igniteskylabs.ridemap',
+      }
+    ],
+    technologies: ['reactnative', 'reactnavigation', 'js', 'tailwindcss', 'firebase', 'websocket', 'git'],
+    description: "Developed Ridemap V2, a React Native app with real-time bus tracking, route optimization, in-app chat, bus pass management, and an AI chatbot. This new version increased user engagement, achieving 4.2+ stars, 530+ reviews, and 10K+ downloads."
   },
   pts: { 
     name: 'Pterodactyl Trial Servers',

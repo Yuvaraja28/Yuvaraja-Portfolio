@@ -62,7 +62,7 @@ export default function ProjectDialog({ id }) {
                 src={banner}
                 alt={project.title}
                 key={banner_idx}
-                style={{ width: '100%', height: '100%', objectFit: 'contain', display: (banner_idx == currentImageIndex) ? 'block' : 'none' }}
+                style={{ width: '100%', height: '360px', objectFit: 'contain', display: (banner_idx == currentImageIndex) ? 'block' : 'none' }}
               />
           )}
         </div>

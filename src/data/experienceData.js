@@ -12,7 +12,7 @@ const experienceData = [
         role: 'Full Stack App Developer',
         duration: {
           start: new Date('06-27-2024'),
-          end: new Date('09-27-2024'),
+          end: new Date('03-27-2025'),
         },
         points: [
           '• Worked on the LucasTVS project, developing a digital test platform with a dashboard to monitor and evaluate worker’s performance via camera feed.',

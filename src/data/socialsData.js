@@ -1,5 +1,6 @@
 import { FiGlobe } from "react-icons/fi";
 import { SiCodechef, SiLeetcode } from "react-icons/si";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FaYoutube, FaGithub, FaLinkedin, FaDiscord, FaInstagram, FaPaypal, FaTwitter } from "react-icons/fa";
 
 export const socials = {
@@ -42,6 +43,10 @@ export const socials = {
   paypal: {
     name: 'Paypal',
     comp: FaPaypal,
+  },
+  playstore: {
+    name: 'PlayStore',
+    comp: IoLogoGooglePlaystore,
   }
 }
 
