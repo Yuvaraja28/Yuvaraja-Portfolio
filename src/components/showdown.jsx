@@ -1,9 +1,13 @@
 const showdownImages = [
+  "assets/showdown/auroville_ccc.jpg",
+  "assets/showdown/auroville_ccc_goodies.jpg",
   "assets/showdown/vit_chennai.jpg",
   "assets/showdown/mvit_ignite.jpg",
+  "assets/showdown/ParkWheels_Team.jpg",
   "assets/showdown/petit.jpg",
   "assets/showdown/scimit.jpg",
   "assets/showdown/aatral.jpg",
+  "assets/showdown/ParkWheels_Stage.jpg",
   "assets/showdown/petit_speech.jpg",
   "assets/showdown/ptu_cosmocom.jpg",
   "assets/showdown/mailam.jpg",
