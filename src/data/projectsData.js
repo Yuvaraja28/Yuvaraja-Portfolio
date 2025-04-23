@@ -113,7 +113,7 @@ const projectsData = {
     active: true,
     name: 'Student Connect',
     showcase: 'assets/projects/students-connect/students-connect.png',
-    banner: ['assets/projects/students-connect/students-connect-banner.png'],
+    banner: ['assets/projects/students-connect/students-connect-banner.png', 'assets/projects/students-connect/students-connect-2.png', 'assets/projects/students-connect/students-connect-3.png', 'assets/projects/students-connect/students-connect-4.png'],
     links: [
       {
         name: 'github',

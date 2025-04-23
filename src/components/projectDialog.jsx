@@ -12,16 +12,65 @@ export default function ProjectDialog({ id }) {
   
   if (!id || !project) return null;
   
-  const navigation = useNavigate()
+  const navigation = useNavigate();
   const projectDialogRef = React.useRef(null);
-  const [currentImageIndex, setCurrentImageIndex] = React.useState(0)
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
   function closeProjectDialog(e) {
     if (projectDialogRef.current == null) return;
-    if (e.target == projectDialogRef.current) {
-      navigation('/')
+    if (e.target === projectDialogRef.current) {
+      navigation('/');
     }
   }
+
+  function handleKeyDown(e) {
+    if (e.key === "ArrowLeft") {
+      setCurrentImageIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : project.banner.length - 1));
+    } else if (e.key === "ArrowRight") {
+      setCurrentImageIndex((prevIndex) => (prevIndex < project.banner.length - 1 ? prevIndex + 1 : 0));
+    }
+  }
+
+  function handleMouseDown(e) {
+    projectDialogRef.current.startX = e.clientX;
+  }
+  
+  function handleMouseUp(e) {
+    const endX = e.clientX;
+    const diffX = projectDialogRef.current.startX - endX;
+  
+    if (diffX > 50) {
+      // Drag left
+      setCurrentImageIndex((prevIndex) => (prevIndex < project.banner.length - 1 ? prevIndex + 1 : 0));
+    } else if (diffX < -50) {
+      // Drag right
+      setCurrentImageIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : project.banner.length - 1));
+    }
+  }
+  
+  function handleSwipeStart(e) {
+    projectDialogRef.current.startX = e.touches[0].clientX;
+  }
+
+  function handleSwipeEnd(e) {
+    const endX = e.changedTouches[0].clientX;
+    const diffX = projectDialogRef.current.startX - endX;
+
+    if (diffX > 50) {
+      // Swipe left
+      setCurrentImageIndex((prevIndex) => (prevIndex < project.banner.length - 1 ? prevIndex + 1 : 0));
+    } else if (diffX < -50) {
+      // Swipe right
+      setCurrentImageIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : project.banner.length - 1));
+    }
+  }
+
+  React.useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <motion.div
@@ -41,88 +90,83 @@ export default function ProjectDialog({ id }) {
       >
         <div
           className="flex flex-row w-full items-center relative"
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
         >
           {project.banner.map((banner, banner_idx) =>
-            (banner.includes("https://www.youtube")) ?
+            banner.includes("https://www.youtube") ? (
               <iframe
                 src={banner}
                 key={banner_idx}
                 frameBorder="0"
                 className="w-full h-72 lg:h-96"
                 style={{
-                  display: (banner_idx == currentImageIndex) ? 'block' : 'none'
+                  display: banner_idx === currentImageIndex ? "block" : "none",
                 }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share"
               />
-              :
-              <img
-                width={1920}
-                height={1080}
-                loading='lazy'
-                src={banner}
-                alt={project.title}
+            ) : (
+              <div
                 key={banner_idx}
-                style={{ width: '100%', height: '360px', objectFit: 'contain', display: (banner_idx == currentImageIndex) ? 'block' : 'none' }}
-              />
+                style={{
+                  backgroundImage: `url(${banner})`,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  width: "100%",
+                  height: "360px",
+                  cursor: 'pointer',
+                  display: banner_idx === currentImageIndex ? "block" : "none",
+                }}
+                className="select-none"
+                onTouchStart={handleSwipeStart}
+                onTouchEnd={handleSwipeEnd}
+              ></div>
+            )
           )}
         </div>
-        {(project.banner.length > 1) &&
-          <div
-            className="flex flex-row gap-3 mt-4"
-          >
-            {Array.from({ length: project.banner.length }).map((_, idx) => 
-              <span key={idx} className="w-2.5 h-2.5 border border-white rounded-full" onClick={() => setCurrentImageIndex(idx)} style={{ cursor: 'pointer', background: (idx ==currentImageIndex) ? 'white' : 'transparent' }}></span>
-            )}
+        {project.banner.length > 1 && (
+          <div className="flex flex-row gap-3 mt-4">
+            {Array.from({ length: project.banner.length }).map((_, idx) => (
+              <span
+                key={idx}
+                className="w-2.5 h-2.5 border border-white rounded-full"
+                onClick={() => setCurrentImageIndex(idx)}
+                style={{
+                  cursor: "pointer",
+                  background: idx === currentImageIndex ? "white" : "transparent",
+                }}
+              ></span>
+            ))}
           </div>
-        }
-        <motion.div
-          animate
-          className="flex flex-col gap-2 px-6 pt-4 pb-5"
-        >
-          <div
-            className="flex flex-row items-center justify-between gap-2"
-          >
-            <span
-              className="text-[26px] leading-8"
-            >
-              {project.name}
-            </span>
-            <div
-              className="flex flex-row items-center justify-center gap-1.5"
-            >
-              {project.links.map(link => 
+        )}
+        <motion.div animate className="flex flex-col gap-2 px-6 pt-4 pb-5">
+          <div className="flex flex-row items-center justify-between gap-2">
+            <span className="text-[26px] leading-8">{project.name}</span>
+            <div className="flex flex-row items-center justify-center gap-1.5">
+              {project.links.map((link) => (
                 <SocialBubbleBG
                   key={link.name}
                   social={{ url: link.url, ...socials[link.name] }}
                   size={21}
                 />
-              )}
+              ))}
             </div>
           </div>
-          <div
-            className="text-[17px] font-light opacity-90"
-          >
+          <div className="text-[17px] font-light opacity-90">
             {project.description}
           </div>
-          <div
-            className="flex flex-col gap-1.5 mt-1"
-          >
-            <span
-              className="text-lg"
-            >
-              Technologies used:
-            </span>
-            <div
-              className="flex flex-row flex-wrap gap-2.5"
-            >
-              {project.technologies.map(tech => 
+          <div className="flex flex-col gap-1.5 mt-1">
+            <span className="text-lg">Technologies used:</span>
+            <div className="flex flex-row flex-wrap gap-2.5">
+              {project.technologies.map((tech) => (
                 <TechBubble
                   key={tech}
                   tech={technologies[tech]}
                   hideName={true}
                   size={45}
                 />
-              )}
+              ))}
             </div>
           </div>
         </motion.div>
