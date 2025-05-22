@@ -19,7 +19,7 @@ export function TechBubble({ tech, size = 62, hideName = false }) {
           padding: parseInt(size / 4.5) + 'px'
         }}
         aria-label={`This Link takes you to Official ${tech.title} website.`}
-        className="bg-social-hover/5 border border-social-hover/10 rounded-2xl shadow-2xl self-center"
+        className="bg-social-hover/40 border border-social-hover/60 rounded-2xl shadow-2xl self-center"
       >
         <img
           width={256}

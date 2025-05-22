@@ -16,7 +16,7 @@ export default function Landing() {
           className="flex flex-col gap-8 items-center"
         >
           <div
-            className="block wide:text-[28px] wide:leading-[1.8] sm:text-center text-[30px] sm:text-[35px] md:text-[44px] text-left font-medium leading-[53px] md:leading-[68px] md:flex flex-col 2xl:gap-1"
+            className="block wide:text-[28px] wide:leading-[1.8] sm:text-center text-[28px] sm:text-[33px] md:text-[40px] text-left font-medium leading-[45px] md:leading-[64px] md:flex flex-col 2xl:gap-1"
           >
             <motion.span
               initial={{
@@ -61,7 +61,7 @@ export default function Landing() {
               }}
               className="mr-[10px]"
             >
-              {profileData.role} who owns
+              Full Stack Developer crafting products,
             </motion.span>
             <motion.span
               initial={{
@@ -78,16 +78,7 @@ export default function Landing() {
               }}
               className="mr-[10px]"
             >
-              <a
-                style={{
-                  cursor: 'pointer'
-                }}
-                target="_blank"
-                href={profileData.company_url}
-                className="underline underline-offset-[16px] decoration-dotted decoration-white rounded-md pb-0 pt-1 px-1 bg-black text-white hover:text-black hover:bg-white transition-all duration-700"
-              >
-                {profileData.company}
-              </a>. Based in {profileData.location}.
+              Driven by curiosity and code.
             </motion.span>
           </div>
           <motion.span

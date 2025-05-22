@@ -1,9 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme inline {
+  --color-font-color: #fff;
+  --color-background-color: #000;
+  --color-menu-color: hsla(0,0%,100%,.1);
+  --color-menu-hover: hsla(0,0%,100%,.08);
+  --color-line-color: hsla(0,0%,100%,.16);
+  --color-social-hover: hsla(0,0%,100%,.16);
+}
 
 * {
   font-family: "Epilogue", sans-serif;
+  scroll-behavior: smooth;
   overflow-x: clip;
 }
 

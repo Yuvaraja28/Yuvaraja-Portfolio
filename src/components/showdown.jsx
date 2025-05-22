@@ -36,7 +36,6 @@ export default function ShowDown() {
         {showdownImages.map((image, index) =>
           <img
             src={image}
-            loading="lazy"
             alt={'Image of an Event'}
             key={index}
             style={{

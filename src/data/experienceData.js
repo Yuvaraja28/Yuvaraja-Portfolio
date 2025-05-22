@@ -15,9 +15,9 @@ const experienceData = [
           end: new Date('03-27-2025'),
         },
         points: [
-          '• Worked on the LucasTVS project, developing a digital test platform with a dashboard to monitor and evaluate worker’s performance via camera feed.',
-          '• As a Fullstack Developer at Ridemap, led the team, recommended tech stacks, and participated in code reviews.',
-          '• Developed Ridemap’s V2 Mobile app using Bare React Native, featuring bus tracking,route updates, in app chat, bus pass management, and AI chatbot.'
+          'Worked on the LucasTVS project, developing a digital test platform with a dashboard to monitor and evaluate worker’s performance via camera feed.',
+          'As a Fullstack Developer at Ridemap, led the team, recommended tech stacks, and participated in code reviews.',
+          'Developed Ridemap’s V2 Mobile app using Bare React Native, featuring bus tracking,route updates, in app chat, bus pass management, and AI chatbot.'
         ]
       },
       {
@@ -27,7 +27,8 @@ const experienceData = [
           end: new Date('06-25-2024'),
         },
         points: [
-          '• Enhanced the Bus and User Management admin panel by adding features and fixing bugs to improve functionality and user experience'
+          'Enhanced the Bus and User Management admin panel by adding features and fixing bugs to improve functionality and user experience',
+          'Developed a responsive landing page for the company’s product to boost user engagement.'
         ]
       }
     ]
@@ -47,10 +48,11 @@ const experienceData = [
           start: new Date('02-01-2021')
         },
         points: [
-          '• Running and maintaining devley.1he.dev.',
-          '• Conceptualized, Designed, Built and Launched the entire website.',
-          '• Developed all the products that are available in the marketplace.',
-          '• Handling All Customer Support Tickets: Ensuring exceptional service and satisfaction',
+          "Operated and managed Devley, a freelance software development service dedicated to providing innovative IT solutions.",
+          "Independently conceptualized, designed, built, and launched the entire Devley website.",
+          "Developed all products available in the Devley marketplace.",
+          "Specializing in serving Discord-based clients with tailored software solutions.",
+          "Personally handled all customer support tickets, ensuring exceptional service and client satisfaction."
         ]
       }
     ]

@@ -29,7 +29,7 @@ export function SocialBubbleBG({ social, size = 21 }) {
       style={{
         cursor: 'pointer'
       }}
-      className="bg-social-hover/5 border border-social-hover/10 rounded-[12px] p-1.5 shadow-2xl w-fit"
+      className="bg-social-hover/50 border border-social-hover/60 rounded-[12px] p-1.5 shadow-2xl w-fit"
     >
       <social.comp size={size} />
     </motion.a>

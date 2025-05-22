@@ -138,7 +138,7 @@ export default function Experiences() {
                             key={point_index}
                             className="font-light"
                           >
-                            {point}
+                            • {point}
                           </span>
                         )}
                       </div>

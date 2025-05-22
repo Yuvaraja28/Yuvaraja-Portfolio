@@ -198,12 +198,18 @@ export const technologies = {
   reCaptcha: {
     title: 'reCaptcha',
     link: 'https://www.google.com/recaptcha/about/',
-    src: 'https://www.google.com/recaptcha/about/images/reCAPTCHA-logo@2x.png'
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/1200px-RecaptchaLogo.svg.png'
   },
   pterodactyl: {
     title: "Pterodactyl",
     link: 'https://pterodactyl.io',
     src: 'https://pterodactyl.io/favicons/apple-touch-icon.png',
+    radius: '14px'
+  },
+  paypalsdk: {
+    title: "Paypal SDK",
+    link: 'https://developer.paypal.com/',
+    src: 'https://www.paypalobjects.com/webstatic/developer/favicons/pp32.png',
     radius: '14px'
   }
 }
@@ -240,7 +246,8 @@ const techStackData = [
       'django',
       'quart',
       'node',
-      'express'
+      'express',
+      'paypalsdk'
     ]
   },
   {

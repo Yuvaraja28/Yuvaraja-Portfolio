@@ -4,7 +4,7 @@ import profileData from '../data/profileData';
 export default function Header() {
   return (
     <div
-      className="pt-[20px] md:pt-[32px] flex flex-row flex-wrap items-center justify-center sm:justify-between gap-4 selection:text-background-color selection:bg-font-color"
+      className="pt-[20px] mb-4 sm:mb-0 md:pt-[32px] flex flex-row flex-wrap items-center justify-center sm:justify-between gap-2 selection:text-background-color selection:bg-font-color"
     >
       <a
         href="/"
@@ -33,7 +33,7 @@ export default function Header() {
             duration: 0.25,
             type: 'spring'
           }}
-          className="pt-[12px] py-[10px] px-[15px] text-[14px] sm:text-[16px] sm:px-[35px] font-semibold select-none bg-font-color text-background-color rounded-[16px] h-full"
+          className="pt-[10px] pb-[8.5px] px-[15px] text-[14px] sm:text-[16px] sm:px-[35px] font-semibold select-none bg-font-color text-background-color rounded-[15px] h-full"
         >
           {profileData.role}
         </motion.span>
@@ -43,11 +43,11 @@ export default function Header() {
         style={{
           cursor: 'pointer'
         }}
-        className="text-center text-xl font-semibold pl-5"
+        className="text-center text-xl font-semibold border-b-3 border-dotted hover:bg-white hover:text-black hover:border-solid transition-all duration-500 hover:px-3 hover:py-1 hover:pt-1.5 hover:rounded-xl"
         href={`mailto:${profileData.mail}`}
         aria-label='This is the Mail ID Link.'
       >
-        Freelancer
+        Hire me!
       </a>
     </div>
   )

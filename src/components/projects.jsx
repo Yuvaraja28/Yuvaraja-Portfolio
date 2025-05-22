@@ -12,7 +12,7 @@ export default function Projects() {
 
   return (
     <div
-      className="flex flex-col gap-8"
+      className="flex flex-col items-center gap-8"
     >
       <motion.div
         initial={{
@@ -27,7 +27,7 @@ export default function Projects() {
           duration: 0.8,
           type: 'spring'
         }}
-        className="flex flex-row flex-wrap justify-between items-center border-t-4 border-font-color"
+        className="flex flex-row flex-wrap justify-between items-center border-t-4 border-font-color w-full"
       >
         <h2
           className="text-[42px] sm:text-[54px] font-medium"
