@@ -43,7 +43,7 @@ export default function Header() {
         style={{
           cursor: 'pointer'
         }}
-        className="text-center text-xl font-semibold border-b-3 border-dotted hover:bg-white hover:text-black hover:border-solid transition-all duration-500 hover:px-3 hover:py-1 hover:pt-1.5 hover:rounded-xl"
+        className="text-center text-xl font-semibold border-b-3 border-dotted border-transparent hover:border-white transition-border duration-500"
         href={`mailto:${profileData.mail}`}
         aria-label='This is the Mail ID Link.'
       >

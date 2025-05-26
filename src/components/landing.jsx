@@ -1,6 +1,7 @@
 import Header from './header.jsx';
 import { motion } from "motion/react";
 import profileData from '../data/profileData';
+import CanvasBackground from './particles.jsx';
 import socialsData, { socials } from '.././data/socialsData';
 
 export default function Landing() {
@@ -8,6 +9,7 @@ export default function Landing() {
     <div
       className='px-[20px] 2xl:px-[40px] h-[105vh] sticky top-0'
     >
+      <CanvasBackground />
       <Header />
       <div
         className="flex flex-col justify-center 2xl:px-[8.333%] gap-10 selection:text-background-color selection:bg-font-color h-[70%] sm:h-[80%]"

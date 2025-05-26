@@ -24,7 +24,7 @@ const projectsData = {
         url: 'https://devley.1he.dev',
       }
     ],
-    technologies: ['next', 'react', 'node', 'motion', 'mongodb', 'paypalsdk', 'websocket', 'discordOAuth2', 'git'],
+    technologies: ['next', 'react', 'node', 'motion', 'tailwindcss', 'mongodb', 'paypalsdk', 'websocket', 'discordOAuth2', 'git'],
     description: "Developed a digital marketplace offering purchase digital products. The dashboard uses Paypal for Payment Processing, Discord OAuth for authentication and MongoDB for database management, serving verified customers."
   },
   ridemap: {
