@@ -42,11 +42,23 @@
   <body>
     <div id="root"></div>
     <noscript>
-      <img width="200px" height="200px" style="border-radius: 24px; margin-bottom: 8px;" src="https://yuv.1he.dev/assets/images/profile.jpg" />
-      <h1><b>Yuvaraja Murali</b></h1>
-      <span style="font-size: 20px;">Please enable scripts in your browser to view full portfolio</span>
-      <a href="https://yuv.1he.dev/resume.pdf" style="font-size: 24px;">Resume</a>
-      <a href="https://github.com/yuvaraja28" style="font-size: 24px; margin-top: 5px;">Github</a>
+      <img 
+        width="200" 
+        height="200" 
+        style="border-radius: 24px; margin-bottom: 8px;" 
+        src="https://yuv.1he.dev/assets/images/profile.jpg" 
+        alt="Yuvaraja Murali"
+        loading="lazy"
+        decoding="async"
+      />
+      <h1><strong>Yuvaraja Murali</strong></h1>
+      <p style="font-size: 20px;">Please enable scripts in your browser to view the full portfolio.</p>
+      <section aria-label="Important Links"></section>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;">
+          <a href="https://yuv.1he.dev/resume.pdf" style="font-size: 22px; border-bottom: 3px dotted white;" rel="noopener" target="_blank">Resume (PDF)</a>
+          <a href="https://github.com/yuvaraja28" style="font-size: 22px; border-bottom: 3px dotted white;" rel="noopener" target="_blank">GitHub Profile</a>
+        </div>
+      </section>
     </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
