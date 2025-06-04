@@ -20,6 +20,11 @@ export const technologies = {
     link: 'https://en.wikipedia.org/wiki/C_(programming_language)',
     src: "https://www.learn-c.org/static/img/favicons/learn-c.org.ico"
   },
+  cpp: {
+    title: 'C++',
+    link: 'https://en.wikipedia.org/wiki/C%2B%2B',
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/250px-ISO_C%2B%2B_Logo.svg.png"
+  },
   java: {
     title: 'Java',
     link: 'https://www.oracle.com/java/technologies/',
@@ -211,6 +216,24 @@ export const technologies = {
     link: 'https://developer.paypal.com/',
     src: 'https://www.paypalobjects.com/webstatic/developer/favicons/pp32.png',
     radius: '14px'
+  },
+  osm: {
+    title: "OSM",
+    link: 'https://www.openstreetmap.org',
+    src: 'https://www.openstreetmap.org/assets/favicon-194x194-79d3fb0152c735866e64b1d7535d504483cd13c2fad0131a6142bd9629d30de2.png',
+    radius: '8px'
+  },
+  androidStudio: {
+    title: "Android Studio",
+    link: 'https://developer.android.com/studio',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Android_Studio_Logo_2024.svg/210px-Android_Studio_Logo_2024.svg.png',
+    radius: '8px'
+  },
+  linux: {
+    title: "Linux",
+    link: 'https://www.linux.org',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/500px-Tux.svg.png',
+    radius: '8px'
   }
 }
 
@@ -219,8 +242,9 @@ const techStackData = [
     type: 'Programming Languages',
     stack: [
       'py',
-      'js',
       'ts',
+      'js',
+      'cpp',
       'c',
       'java',
       'go'
@@ -232,11 +256,14 @@ const techStackData = [
       'next',
       'react',
       'redux',
+      'html',
+      'css',
       'vite',
       'tailwindcss',
       'mui',
       'sass',
-      'motion'
+      'motion',
+      'osm'
     ]
   },
   {
@@ -255,6 +282,7 @@ const techStackData = [
     stack: [
       'reactnative',
       'expo',
+      'androidStudio',
       'reactnavigation',
       'paper'
     ]
@@ -271,6 +299,7 @@ const techStackData = [
   {
     type: 'Tools',
     stack: [
+      'linux',
       'git',
       'selenium',
       'postman',

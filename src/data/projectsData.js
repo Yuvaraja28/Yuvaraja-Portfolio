@@ -10,7 +10,7 @@ const projectsData = {
         url: 'https://mitilence.1he.dev',
       }
     ],
-    technologies: ['next', 'react', 'node', 'motion', 'firebase', 'git'],
+    technologies: ['next', 'react', 'node', 'motion', 'tailwindcss', 'firebase', 'git'],
     description: "Developed the Mitilence event management website, enabling users to pre-register for departmental events and providing organizers with a streamlined participant check-in process and comprehensive data management through an intuitive admin and organizer dashboard."
   },
   devley: {
@@ -38,7 +38,7 @@ const projectsData = {
         url: 'https://play.google.com/store/apps/details?id=com.igniteskylabs.ridemap',
       }
     ],
-    technologies: ['reactnative', 'reactnavigation', 'js', 'tailwindcss', 'firebase', 'websocket', 'git'],
+    technologies: ['reactnative', 'reactnavigation', 'js', 'tailwindcss', 'osm', 'androidStudio', 'firebase', 'websocket', 'git'],
     description: "Developed Ridemap V2, a React Native app with real-time bus tracking, route optimization, in-app chat, bus pass management, and an AI chatbot. This new version increased user engagement, achieving 4.2+ stars, 530+ reviews, and 10K+ downloads."
   },
   pts: { 
