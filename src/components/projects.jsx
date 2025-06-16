@@ -6,7 +6,7 @@ import { MdArrowOutward } from "react-icons/md";
 import { IoIosArrowRoundDown } from "react-icons/io";
 
 export default function Projects() {
-  const PROJECT_MULTIPLIER = 3
+  const PROJECT_MULTIPLIER = 6
   const navigation = useNavigate()
   const [projectsLimit, setProjectsLimit] = React.useState(PROJECT_MULTIPLIER)
 

@@ -80,7 +80,7 @@ export const technologies = {
   flask: {
     title: 'Flask',
     link: 'https://flask.palletsprojects.com/',
-    src: "https://flask.palletsprojects.com/en/3.0.x/_static/shortcut-icon.png"
+    src: "https://flask.palletsprojects.com/en/stable/_static/flask-icon.svg"
   },
   django: {
     title: 'Django',
@@ -90,7 +90,7 @@ export const technologies = {
   quart: {
     title: 'Quart',
     link: 'https://quart.palletsprojects.com/en/latest/',
-    src: "https://quart.palletsprojects.com/en/latest/_static/logo_short.png"
+    src: "https://quart.palletsprojects.com/en/latest/_static/quart-icon.svg"
   },
   node: {
     title: 'Node.js',
@@ -138,6 +138,11 @@ export const technologies = {
     link: 'https://dev.mysql.com/',
     src: "https://labs.mysql.com/common/themes/sakila/favicon.ico",
     radius: '10px'
+  },
+  sqlite3: {
+    title: 'Sqlite3',
+    link: 'https://sqlite.org',
+    src: "https://sqlite.org/images/sqlite370_banner.svg"
   },
   firebase: {
     title: 'Firebase',
@@ -291,9 +296,10 @@ const techStackData = [
     type: 'Database',
     stack: [
       'mongodb',
+      'firebase',
       'redis',
       'mysql',
-      'firebase'
+      'sqlite3'
     ]
   },
   {
