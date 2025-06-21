@@ -4,16 +4,21 @@ export const technologies = {
     link: 'https://www.python.org/',
     src: "https://www.python.org/favicon.ico"
   },
+  ts: {
+    title: 'Typescript',
+    link: 'https://www.typescriptlang.org/',
+    src: "https://www.typescriptlang.org/favicon-32x32.png"
+  },
   js: {
     title: 'Javascript',
     link: 'https://nodejs.org/',
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png",
     radius: '8px'
   },
-  ts: {
-    title: 'Typescript',
-    link: 'https://www.typescriptlang.org/',
-    src: "https://www.typescriptlang.org/favicon-32x32.png"
+  bun: {
+    title: 'Bun',
+    link: 'https://bun.sh/',
+    src: "https://bun.sh/favicon.ico"
   },
   c: {
     title: 'C',
@@ -261,6 +266,7 @@ const techStackData = [
       'js',
       'cpp',
       'c',
+      'bun',
       'java',
       'go'
     ]
