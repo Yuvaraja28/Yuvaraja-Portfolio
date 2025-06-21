@@ -52,8 +52,8 @@ export const technologies = {
   },
   vite: {
     title: 'Vite',
-    link: 'https://vitejs.dev/',
-    src: 'https://vitejs.dev/logo.svg'
+    link: 'https://vite.dev/',
+    src: 'https://vite.dev/logo.svg'
   },
   tailwindcss: {
     title: 'Tailwind CSS',
@@ -159,6 +159,16 @@ export const technologies = {
     link: 'https://www.selenium.dev/',
     src: "https://www.selenium.dev/favicons/apple-touch-icon-180x180.png",
     radius: '8px'
+  },
+  docker: {
+    title: 'Docker',
+    link: 'https://docker.com',
+    src: 'https://docker.com/app/uploads/2024/02/cropped-docker-logo-favicon-180x180.png'
+  },
+  nginx: {
+    title: 'Nginx',
+    link: 'https://nginx.org',
+    src: 'https://nginx.org/favicon.ico'
   },
   postman: {
     title: 'Postman',
@@ -305,11 +315,13 @@ const techStackData = [
   {
     type: 'Tools',
     stack: [
-      'linux',
       'git',
+      'nginx',
+      'docker',
       'selenium',
       'postman',
-      'figma'
+      'figma',
+      'linux'
     ]
   },
   {

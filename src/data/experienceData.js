@@ -1,6 +1,6 @@
 const experienceData = [
   {
-    name: 'Ridemap',
+    name: 'Ignite Skylabs',
     link: 'https://ridemap.in/',
     location: 'Pondicherry, India',
     mode: 'On-Site',
@@ -15,9 +15,10 @@ const experienceData = [
           end: new Date('03-27-2025'),
         },
         points: [
+          'Developed a fully-featured mobile app using React Native for live bus tracking, route optimization, bus pass and in-app chat — reached 10K+ downloads on the Play Store.',
           'Worked on the LucasTVS project, developing a digital test platform with a dashboard to monitor and evaluate worker’s performance via camera feed.',
-          'As a Fullstack Developer at Ridemap, led the team, recommended tech stacks, and participated in code reviews.',
-          'Developed Ridemap’s V2 Mobile app using Bare React Native, featuring bus tracking,route updates, in app chat, bus pass management, and AI chatbot.'
+          'Implemented an NGINX load balancer for the WebSocket server handling live bus coordinates, enabling horizontal scaling and reducing single points of failure.',
+          'Reviewed code for junior interns, and collaborated closely with backend and design teams to ensure feature integrity and user experience consistency.'
         ]
       },
       {
@@ -27,8 +28,8 @@ const experienceData = [
           end: new Date('06-25-2024'),
         },
         points: [
-          'Enhanced the Bus and User Management admin panel by adding features and fixing bugs to improve functionality and user experience',
-          'Developed a responsive landing page for the company’s product to boost user engagement.'
+          'Re-architected a single-instance admin dashboard into a centralized multi-institute system for unified and scalable management.',
+          'Developed a preview version of responsive landing page for the company’s product to boost user engagement.'
         ]
       }
     ]

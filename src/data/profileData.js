@@ -6,7 +6,7 @@ const profileData = {
   location: 'India',
   image: 'assets/images/profile.jpg',
   updated: 'June 2025',
-  resume: '/resume.pdf',
+  resume: '/Yuvaraja_Resume.pdf',
   mail: 'yuv.the.dev@gmail.com',
   company_url: 'https://devley.1he.dev',
   about_title: [
