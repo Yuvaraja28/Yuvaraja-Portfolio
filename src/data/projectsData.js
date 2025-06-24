@@ -38,6 +38,7 @@ const projectsData = {
       "assets/projects/devley/devley-banner-2.png",
       "assets/projects/devley/devley-banner-3.png",
       "assets/projects/devley/devley-banner-4.png",
+      "assets/projects/devley/devley-banner-5.png",
     ],
     links: [
       {
