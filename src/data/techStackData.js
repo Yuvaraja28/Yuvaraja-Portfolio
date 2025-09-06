@@ -152,7 +152,7 @@ export const technologies = {
   firebase: {
     title: 'Firebase',
     link: 'https://firebase.google.com/',
-    src: 'https://www.gstatic.com/devrel-devsite/prod/vc3f2c9e1a38bbf17d13dba368cd3cbb8fa1d62d936b55c84ca4c54c7df2da66a/firebase/images/touchicon-180.png'
+    src: 'https://www.gstatic.com/devrel-devsite/prod/vd661722dc0bf89538e3b1471bfa72ffd39d274bea13001a4422eac953971d84d/firebase/images/touchicon-180.png'
   },
   git: {
     title: 'Git',
@@ -193,7 +193,7 @@ export const technologies = {
   tensorflow: {
     title: 'Tensorflow',
     link: 'https://www.tensorflow.org/',
-    src: 'https://www.gstatic.com/devrel-devsite/prod/vb33e12289bba8e69a7a2381ed0b330f48e3451c31f78602f030bd1a47c2a4e59/tensorflow/images/favicon.png'
+    src: 'https://www.gstatic.com/devrel-devsite/prod/vd661722dc0bf89538e3b1471bfa72ffd39d274bea13001a4422eac953971d84d/tensorflow/images/apple-touch-icon-180x180.png'
   },
   html: {
     title: 'HTML',

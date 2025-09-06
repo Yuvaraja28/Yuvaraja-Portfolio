@@ -1,4 +1,29 @@
 const projectsData = {
+  printa4: {
+    name: "PrintA4",
+    title: "Kiosk Printing Solution",
+    showcase: "assets/projects/printa4/printa4.png",
+    banner: [
+      "assets/projects/printa4/printa4-banner.png",
+      "assets/projects/printa4/printa4-banner-2.png",
+    ],
+    links: [
+      {
+        name: "web",
+        url: "https://printa4.in",
+      },
+    ],
+    technologies: [
+      "react",
+      "node",
+      "tailwindcss",
+      "mongodb",
+      "websocket",
+      "git",
+    ],
+    description:
+      "Developed as part of IGSL, India’s first kiosk printing service, enabling organizations to print directly from mobile devices and receive documents in seconds. Engineered an instant mobile and cloud-based printing solution with a secure, user-friendly kiosk interface.",
+  },
   mitilence: {
     name: "Mitilence'25",
     title: "MVIT",
