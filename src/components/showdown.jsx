@@ -1,21 +1,4 @@
-const showdownImages = [
-  "assets/showdown/auroville_ccc.avif",
-  "assets/showdown/auroville_ccc_goodies.avif",
-  "assets/showdown/vit_chennai.avif",
-  "assets/showdown/mvit_ignite.avif",
-  "assets/showdown/ParkWheels_Team.avif",
-  "assets/showdown/petit.avif",
-  "assets/showdown/scimit.avif",
-  "assets/showdown/aatral.avif",
-  "assets/showdown/ParkWheels_Stage.avif",
-  "assets/showdown/petit_speech.avif",
-  "assets/showdown/ptu_cosmocom.avif",
-  "assets/showdown/mailam.avif",
-  "assets/showdown/sri_eshwar.avif",
-  "assets/showdown/ptu_rejour.avif",
-  "assets/showdown/amirta_bengaluru.avif",
-  "assets/showdown/nit_pondy.avif",
-]
+import { showdownImages } from "../data/showdownImages";
 
 export default function ShowDown() {
   //const showdownImagesObjGen = import.meta.glob('../../public/assets/showdown/*.{jpg,jpeg,png,gif}', { eager: true });
