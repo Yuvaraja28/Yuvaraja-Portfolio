@@ -111,7 +111,7 @@ export const technologies = {
   reactnative: {
     title: 'React Native',
     link: 'https://reactnative.dev/',
-    src: "https://reactnative.dev/img/favicon.ico"
+    src: "https://reactnative.dev/favicon.ico"
   },
   expo: {
     title: 'Expo',
