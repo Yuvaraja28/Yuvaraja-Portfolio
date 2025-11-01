@@ -11,8 +11,8 @@ const experienceData = [
       {
         role: 'Senior Frontend Engineer',
         duration: {
-          start: new Date('03-27-2025'),
-          // end: new Date('03-27-2025'),
+          start: new Date('12-27-2024'),
+          end: new Date('03-27-2025'),
         },
         points: [
           'Worked on PrintA4, a self-service printing kiosk solution enabling automated, cloud-based printing for institutions, now scaling to a multi-kiosk platform.',
@@ -24,7 +24,7 @@ const experienceData = [
         role: 'App Developer',
         duration: {
           start: new Date('06-27-2024'),
-          end: new Date('03-27-2025'),
+          end: new Date('12-27-2024'),
         },
         points: [
           'Developed Ridemap App in React Native with bus tracking, chat, bus pass, and AI chat; gained 10K+ downloads.',
