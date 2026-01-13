@@ -9,7 +9,7 @@ const experienceData = [
     color: '#ff0000',
     positions: [
       {
-        role: 'Senior Frontend Engineer',
+        role: 'Frontend Engineer',
         duration: {
           start: new Date('12-27-2024'),
           end: new Date('03-27-2025'),
