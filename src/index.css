@@ -1,59 +1,136 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-font-color: #fff;
-  --color-background-color: #000;
-  --color-menu-color: hsla(0,0%,100%,.1);
-  --color-menu-hover: hsla(0,0%,100%,.08);
-  --color-line-color: hsla(0,0%,100%,.16);
-  --color-social-hover: hsla(0,0%,100%,.16);
+  --color-font-color: #ffffff;
+  --color-background-color: #030303;
+  --color-card-bg: rgba(255, 255, 255, 0.02);
+  --color-card-border: rgba(255, 255, 255, 0.05);
+  --color-accent-primary: #6366f1;
+  --color-accent-secondary: #a855f7;
+  --color-menu-color: rgba(255, 255, 255, 0.03);
+  --color-menu-hover: rgba(255, 255, 255, 0.08);
+  --color-line-color: rgba(255, 255, 255, 0.08);
+  --color-social-hover: rgba(255, 255, 255, 0.1);
 }
 
 * {
-  font-family: "Epilogue", sans-serif;
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
   scroll-behavior: smooth;
-  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   margin: 0;
-  color: #fff;
-  background-color: #000;
+  color: var(--color-font-color);
+  background-color: var(--color-background-color);
+  overflow-x: hidden;
 }
 
-.righteous {
-  font-family: "Righteous", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+.glass {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-card-border);
 }
 
-noscript {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  font-family: "Righteous", sans-serif;
-  font-size: 36px;
-  height: 100vh;
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, var(--color-accent-primary) 50%, var(--color-accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.experienceDot::before {
-  content: "";
-  z-index: 1;
-  width: 8px;
-  height: 8px;
-  margin-top: 8px;
-  border-radius: 50%;
-  position: absolute;
-  background-color: #FFFFFFC0;
+.bg-mesh {
+  background-image:
+    radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 0.2) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 0.2) 0, transparent 50%);
 }
+
+.animate-glow {
+  animation: glow 8s ease-in-out infinite alternate;
+}
+
+.glitch {
+  animation: glitch 1.5s linear infinite;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: -1.5px -1.5px 0 #0ff, 1.5px 1.5px 0 #f00;
+  }
+  25% {
+    text-shadow: 1.5px 1.5px 0 #0ff, -1.5px -1.5px 0 #f00;
+  }
+  50% {
+    text-shadow: 1.5px -1.5px 0 #0ff, -1.5px 1.5px 0 #f00;
+  }
+  75% {
+    text-shadow: -1.5px 1.5px 0 #0ff, 1.5px -1.5px 0 #f00;
+  }
+}
+
+@keyframes glow {
+  from {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.3333%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-33.3333%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-fast {
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.animate-marquee-slow {
+  animation: marquee 50s linear infinite;
+  width: max-content;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 40s linear infinite;
+  width: max-content;
+}
+
+/* Pauses the Marquee on Hover  */
+/* .marquee-container:hover .animate-marquee-fast,
+.marquee-container:hover .animate-marquee-slow,
+.marquee-container:hover .animate-marquee-reverse {
+  animation-play-state: paused;
+} */
 
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: white;
+  background: linear-gradient(to bottom, var(--color-accent-primary), var(--color-accent-secondary));
   border-radius: 10px;
 }
 
@@ -61,13 +138,90 @@ noscript {
   background: transparent;
 }
 
-li {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: hidden;
+selection {
+  background-color: var(--color-accent-primary);
+  color: white;
 }
+
+.mask-radial {
+  mask-image: radial-gradient(circle, black 0%, transparent 80%);
+}
+
+/* ============================================================
+   SCROLL-DRIVEN ANIMATION SYSTEM
+   [data-animate] elements start hidden and are revealed by an
+   IntersectionObserver in Layout.astro that adds .is-visible.
+   ============================================================ */
+/* Only hide elements when JS is available (.js class added by inline script in Layout.astro).
+   Without JS the elements are always visible — no white flash for JS-blocked users. */
+.js [data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.js [data-animate="fade-up"].is-visible   { opacity: 1; transform: translateY(0); }
+.js [data-animate="fade-in"]              { transform: none; }
+.js [data-animate="fade-in"].is-visible   { opacity: 1; }
+.js [data-animate="scale-in"]             { transform: scale(0.92); }
+.js [data-animate="scale-in"].is-visible  { opacity: 1; transform: scale(1); }
+.js [data-animate="slide-left"]           { transform: translateX(-24px); }
+.js [data-animate="slide-left"].is-visible{ opacity: 1; transform: translateX(0); }
+
+/* Stagger children — also scoped to .js */
+.js [data-stagger] > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.js [data-stagger].is-visible > *:nth-child(1)  { transition-delay: 0.05s; opacity: 1; transform: none; }
+.js [data-stagger].is-visible > *:nth-child(2)  { transition-delay: 0.10s; opacity: 1; transform: none; }
+.js [data-stagger].is-visible > *:nth-child(3)  { transition-delay: 0.15s; opacity: 1; transform: none; }
+.js [data-stagger].is-visible > *:nth-child(4)  { transition-delay: 0.20s; opacity: 1; transform: none; }
+.js [data-stagger].is-visible > *:nth-child(5)  { transition-delay: 0.25s; opacity: 1; transform: none; }
+.js [data-stagger].is-visible > *:nth-child(6)  { transition-delay: 0.30s; opacity: 1; transform: none; }
+.js [data-stagger].is-visible > *:nth-child(n+7){ transition-delay: 0.35s; opacity: 1; transform: none; }
+
+/* Hover utilities */
+.hover-lift { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+.hover-lift:hover { transform: translateY(-5px); }
+
+.hover-scale { transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+.hover-scale:hover  { transform: scale(1.05); }
+.hover-scale:active { transform: scale(0.95); }
+
+/* Copy feedback */
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.animate-pop-in { animation: pop-in 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* Background orbs (particles.jsx) */
+@keyframes orb1 {
+  0%   { transform: translate(0,0) scale(1); }
+  33%  { transform: translate(100px,50px) scale(1.2); }
+  66%  { transform: translate(50px,-30px) scale(0.9); }
+  100% { transform: translate(0,0) scale(1); }
+}
+@keyframes orb2 {
+  0%   { transform: translate(0,0) scale(1.2); }
+  33%  { transform: translate(-100px,100px) scale(1); }
+  66%  { transform: translate(-50px,50px) scale(1.15); }
+  100% { transform: translate(0,0) scale(1.2); }
+}
+
+/* Hero entry stagger (landing.jsx) */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.js .hero-item {
+  opacity: 0;
+  animation: hero-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-item:nth-child(1) { animation-delay: 0.2s; }
+.hero-item:nth-child(2) { animation-delay: 0.35s; }
+.hero-item:nth-child(3) { animation-delay: 0.5s; }
+.hero-container > .hero-item { animation-delay: 0.65s; }

@@ -1,5 +1,28 @@
 const experienceData = [
   {
+    name: 'Zoho',
+    link: 'https://www.zoho.com/',
+    location: 'Chennai, India',
+    mode: 'On-Site',
+    type: 'Internship',
+    icon: 'assets/experiences/zoho/zoho.png',
+    positions: [
+      {
+        role: 'Incubation Trainee',
+        duration: {
+          start: new Date('01-01-2026'),
+          end: new Date('03-27-2026'),
+        },
+        points: [
+          'Worked on backend and serverless application development using Zoho Catalyst, including serverless functions and the Catalyst SQL Data Store.',
+          'Developed and integrated applications across Zoho CRM and Zoho Creator using Deluge to automate workflows and manage data flow.',
+          'Integrated and consolidated data from multiple Zoho services into Zoho Analytics for reporting and performance insights.',
+          'Collaborated with a mentor to improve solutions, optimize performance, and follow professional development practices.'
+        ]
+      }
+    ]
+  },
+  {
     name: 'Ignite Skylabs',
     link: 'https://ridemap.in/',
     location: 'Pondicherry, India',

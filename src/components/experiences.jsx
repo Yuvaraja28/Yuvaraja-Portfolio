@@ -1,155 +1,84 @@
+import React from 'react';
 import { SocialBubbleBG } from "./socials";
 import { socials } from "../data/socialsData";
 import experienceData from '../data/experienceData';
-import { IoIosArrowRoundDown } from "react-icons/io";
-import { getDateDifference, relativeDate } from "../utils/dateMethods";
+import { relativeDate, getDateDifference } from "../utils/dateMethods";
 
 export default function Experiences() {
   return (
-    <div
-      className="flex flex-col gap-4"
-    >
-      <div
-        className="flex flex-row flex-wrap justify-between items-center border-t-4 border-font-color gap-[6px]"
-      >
-        <h2
-          className="text-[42px] sm:text-[54px] font-medium"
-        >
-          Experiences
-        </h2>
-        <span
-          className="flex flex-row items-center gap"
-        >
-          Worked at various companies <IoIosArrowRoundDown size={22} />
-        </span>
+    <section id='experiences' className="flex flex-col gap-12 px-6 md:px-12 py-8 sm:pt-26">
+      <div data-animate="slide-left" className="flex flex-col gap-3">
+        <div className="flex items-center gap-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+            Professional <span className="text-gradient">Experience</span>
+          </h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-accent-primary to-transparent opacity-20"></div>
+        </div>
+        <p className="text-white/40 text-base md:text-lg max-w-2xl font-medium">
+          A track record of high-impact engineering and innovation.
+        </p>
       </div>
-      <div
-        className="flex flex-col gap-4"
-      >
-        {experienceData.map((experience) =>
+
+      <div data-stagger className="flex flex-col gap-8 relative px-4">
+        <div className="absolute left-0 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent-primary via-accent-secondary to-transparent opacity-10"></div>
+
+        {experienceData.map((experience, index) => (
           <div
             key={experience.name}
-            style={{
-              borderRadius: '18px'
-            }}
-            aria-label={`This link takes you to the companies ${experience.name}'s website that i've worked `}
-            className={`flex flex-col select-none group bg-font-color/5 border border-white/5 drop-shadow-md pl-5 px-4 py-3 sm:pl-6 sm:px-5 sm:py-4`}
+            className={`relative flex flex-col sm:flex-row gap-8 sm:gap-0 items-start ${(index % 2) === 1 ? 'sm:flex-row-reverse' : ''}`}
           >
-            <div
-              className="flex flex-row justify-between gap-4 w-full"
-            >
-              <div
-                className="flex flex-col"
-              >
-                <span
-                  className="text-[20px] sm:text-[21px] font-medium"
-                >
-                  {experience.positions[0].role}
-                </span>
-                <span
-                  className="text-[18px] sm:text-[19px] font-light opacity-95"
-                >
-                  {experience.name} · {experience.type}
-                </span>
-                <span
-                  className="text-[16px] sm:text-[17px] font-light opacity-80"
-                >
-                  {(experience.positions[0].duration?.end == null) ?
-                    `${relativeDate(experience.positions[experience.positions.length - 1].duration.start)} - Present · ${getDateDifference(experience.positions[experience.positions.length - 1].duration.start, new Date())}`
-                    :
-                    `${relativeDate(experience.positions[experience.positions.length - 1].duration.start)} - ${relativeDate(experience.positions[0].duration.end)} · ${getDateDifference(experience.positions[experience.positions.length - 1].duration.start, experience.positions[0].duration.end)}`
-                  }
-                </span>
-                <span
-                  className="font-light opacity-75"
-                >
-                  {experience.location} · {experience.mode}
-                </span>
-              </div>
-              <div
-                className="flex flex-col items-center gap-2.5"
-              >
-                <img
-                  width={1024}
-                  height={1024}
-                  loading='lazy'
-                  alt={experience.name}
-                  src={experience.icon}
-                  style={{ width: '62px', height: '62px', objectFit: 'contain', borderRadius: '20px', padding: '4px' }}
-                  className="border-2 border-white/5"
-                />
-                <div
-                  className="flex flex-row"
-                >
-                  <SocialBubbleBG
-                    social={{ url: experience.link, ...socials.web }}
-                    size={18}
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="flex flex-col gap-2.5 py-2"
-            >
-              {experience.positions.map((position, pos_index) =>
-                <div
-                  key={pos_index}
-                  className="flex flex-col gap-0.5 experienceDot"
-                >
-                  <span
-                    className="text-[18px] font-medium opacity-95 pl-6"
-                  >
-                    {position.role}
-                  </span>
-                  <div
-                    className="flex flex-row"
-                  >
-                    <span
-                      className="w-[1px] h-[initial] bg-white/50 rounded-lg ml-[3px]"
-                    />
-                    <div
-                      className="flex flex-col gap-2 opacity-90 pl-5"
-                    >
-                      <span
-                        className="text-[15px] font-light opacity-80"
-                      >
-                        {(position.duration?.end == null) ?
-                          `${relativeDate(position.duration.start)} - Present · ${getDateDifference(position.duration.start, new Date())}`
-                          :
-                          `${relativeDate(position.duration.start)} - ${relativeDate(position.duration.end)} · ${getDateDifference(position.duration.start, position.duration.end)}`
-                        }
-                      </span>
-                      {(position?.content) &&
-                        <span
-                          className='font-light whitespace-pre-line'
-                        >
-                          {position.content}
-                        </span>
-                      }
-                      <div
-                        className="flex flex-col gap-1"
-                      >
-                        {position.points.map((point, point_index) => 
-                          <span
-                            key={point_index}
-                            className="font-light"
-                          >
-                            • {point}
-                          </span>
-                        )}
-                      </div>
+            <div className="absolute left-0 sm:left-1/2 top-1.5 -translate-x-1/2 w-3 h-3 rounded-full bg-background-color border-2 border-accent-primary/50 z-10 shadow-[0_0_15px_rgba(99,102,241,0.3)] hidden sm:block"></div>
+
+            <div className="w-full sm:w-[45%]">
+              <div className="glass p-6 rounded-[24px] border-white/5 hover:border-accent-primary/20 transition-all duration-500 group">
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="relative p-1 rounded-xl bg-white/5 border border-white/5">
+                      <img loading='lazy' decoding="async" alt={experience.name} src={experience.icon}
+                        className="w-10 h-10 object-contain rounded-lg" />
+                    </div>
+                    <div className="flex flex-col">
+                      <h3 className="text-lg font-extrabold text-white">{experience.positions[0].role}</h3>
+                      <p className="text-white/30 text-[12px] font-bold tracking-widest uppercase">{experience.name}</p>
                     </div>
                   </div>
+
+                  <div className="flex flex-col gap-1 text-white/20 text-[10px] font-bold tracking-wide uppercase">
+                    <span className="flex items-center gap-2 text-white/40 font-black text-[14px]">
+                      <span className="w-1 h-1 rounded-full bg-accent-primary/30"></span>
+                      {experience.type} · {experience.mode}
+                    </span>
+                    <span className="text-white/20 text-[12px]">
+                      {(experience.positions[0].duration?.end == null)
+                        ? `${relativeDate(experience.positions[experience.positions.length - 1].duration.start)} - Present · ${getDateDifference(experience.positions[experience.positions.length - 1].duration.start, new Date())}`
+                        : `${relativeDate(experience.positions[experience.positions.length - 1].duration.start)} - ${relativeDate(experience.positions[0].duration.end)} · ${getDateDifference(experience.positions[experience.positions.length - 1].duration.start, experience.positions[0].duration.end)}`
+                      }
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col">
+                    {experience.positions.map((position, pos_index) => (
+                      <ul key={pos_index} className="flex flex-col gap-1.5 text-white/50 text-[13px] leading-relaxed font-medium">
+                        {position.points.map((point, p_idx) => (
+                          <li key={p_idx} className="flex gap-2">
+                            <span className="text-white/20 text-base leading-none">•</span>
+                            <span className="flex-1">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ))}
+                  </div>
+
+                  <div className="mt-2 pt-3 border-t border-white/5 w-full flex justify-between items-center">
+                    <span className="text-xs font-mono text-white/30 uppercase tracking-widest">{experience.location}</span>
+                    <SocialBubbleBG social={{ url: experience.link, ...socials.web }} size={20} />
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
-        )}
+        ))}
       </div>
-    </div>
+    </section>
   )
 }

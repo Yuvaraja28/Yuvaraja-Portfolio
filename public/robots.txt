@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://yuv.1he.dev/sitemap.xml
+Host: https://yuv.1he.dev
+Sitemap: https://yuv.1he.dev/sitemap-index.xml

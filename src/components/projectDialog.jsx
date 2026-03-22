@@ -1,175 +1,175 @@
 import React from "react";
-import { motion } from "motion/react";
-import { TechBubble } from "./techStack";
+import { motion, AnimatePresence } from "motion/react";
 import { SocialBubbleBG } from "./socials";
 import { socials } from "../data/socialsData";
-import { useNavigate } from "react-router-dom";
 import projectsData from "../data/projectsData";
 import { technologies } from "../data/techStackData";
+import { MdClose, MdChevronLeft, MdChevronRight, MdOpenInNew } from "react-icons/md";
 
 export default function ProjectDialog({ id }) {
   const project = projectsData[id];
-  
   if (!id || !project) return null;
-  
-  const navigation = useNavigate();
-  const projectDialogRef = React.useRef(null);
+
+  const closeDialog = () => window.location.hash = '#projects';
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
-  function closeProjectDialog(e) {
-    if (projectDialogRef.current == null) return;
-    if (e.target === projectDialogRef.current) {
-      navigation('/');
-    }
-  }
+  const nextImage = (e) => {
+    e?.stopPropagation();
+    setCurrentImageIndex((prev) => (prev < project.banner.length - 1 ? prev + 1 : 0));
+  };
 
-  function handleKeyDown(e) {
-    if (e.key === "ArrowLeft") {
-      setCurrentImageIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : project.banner.length - 1));
-    } else if (e.key === "ArrowRight") {
-      setCurrentImageIndex((prevIndex) => (prevIndex < project.banner.length - 1 ? prevIndex + 1 : 0));
-    }
-  }
-
-  function handleMouseDown(e) {
-    projectDialogRef.current.startX = e.clientX;
-  }
-  
-  function handleMouseUp(e) {
-    const endX = e.clientX;
-    const diffX = projectDialogRef.current.startX - endX;
-  
-    if (diffX > 50) {
-      // Drag left
-      setCurrentImageIndex((prevIndex) => (prevIndex < project.banner.length - 1 ? prevIndex + 1 : 0));
-    } else if (diffX < -50) {
-      // Drag right
-      setCurrentImageIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : project.banner.length - 1));
-    }
-  }
-  
-  function handleSwipeStart(e) {
-    projectDialogRef.current.startX = e.touches[0].clientX;
-  }
-
-  function handleSwipeEnd(e) {
-    const endX = e.changedTouches[0].clientX;
-    const diffX = projectDialogRef.current.startX - endX;
-
-    if (diffX > 50) {
-      // Swipe left
-      setCurrentImageIndex((prevIndex) => (prevIndex < project.banner.length - 1 ? prevIndex + 1 : 0));
-    } else if (diffX < -50) {
-      // Swipe right
-      setCurrentImageIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : project.banner.length - 1));
-    }
-  }
+  const prevImage = (e) => {
+    e?.stopPropagation();
+    setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : project.banner.length - 1));
+  };
 
   React.useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "Escape") closeDialog();
     };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   return (
     <motion.div
-      key="overlay"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.2, delay: 0.1 }}
-      onClick={closeProjectDialog}
-      ref={projectDialogRef}
-      className="flex flex-col items-center justify-center px-3 pb-2 z-[999] fixed top-0 bg-[#000000cc] h-[100vh] w-full select-none"
+      onClick={closeDialog}
+      className="fixed inset-0 z-[1000] flex items-center justify-center p-4 sm:p-10 bg-black/90 backdrop-blur-md"
     >
       <motion.div
-        key={`project-popup-${id}`}
         layoutId={`project-popup-${id}`}
-        className="flex flex-col items-center bg-[#101011] border border-white/5 rounded-[20px] drop-shadow-xl overflow-auto md:max-w-[580px]"
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-6xl h-[90vh] glass rounded-[24px] border-white/5 overflow-hidden flex flex-col lg:flex-row shadow-3xl"
       >
-        <div
-          className="flex flex-row w-full items-center relative"
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
+        {/* Close Button */}
+        <button
+          onClick={closeDialog}
+          className="absolute top-4 right-4 z-50 p-2 rounded-full glass hover:bg-white/10 text-white/70 hover:text-white transition-all cursor-pointer"
         >
-          {project.banner.map((banner, banner_idx) =>
-            banner.includes("https://www.youtube") ? (
-              <iframe
-                src={banner}
-                key={banner_idx}
-                frameBorder="0"
-                className="w-full h-72 lg:h-96"
-                style={{
-                  display: banner_idx === currentImageIndex ? "block" : "none",
-                }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share"
-              />
-            ) : (
-              <div
-                key={banner_idx}
-                style={{
-                  backgroundImage: `url(${banner})`,
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  width: "100%",
-                  height: "360px",
-                  cursor: 'pointer',
-                  display: banner_idx === currentImageIndex ? "block" : "none",
-                }}
-                className="select-none"
-                onTouchStart={handleSwipeStart}
-                onTouchEnd={handleSwipeEnd}
-              ></div>
-            )
+          <MdClose size={20} />
+        </button>
+
+        {/* Media Side */}
+        <div className="w-full lg:w-[60%] bg-black/40 flex flex-col relative aspect-video lg:aspect-auto">
+          <div className="flex-1 relative overflow-hidden flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImageIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="w-full h-full p-4 lg:p-12"
+              >
+                {project.banner[currentImageIndex].includes("youtube") ? (
+                  <iframe
+                    src={project.banner[currentImageIndex]}
+                    className="w-full h-full rounded-xl shadow-2xl"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share"
+                  />
+                ) : (
+                  <img
+                    src={project.banner[currentImageIndex]}
+                    alt={project.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-contain rounded-xl shadow-2xl"
+                  />
+                )}
+              </motion.div>
+            </AnimatePresence>
+
+            {project.banner.length > 1 && (
+              <>
+                <button onClick={prevImage} className="absolute left-6 p-2 rounded-full glass hover:bg-accent-primary/20 text-white/50 hover:text-white transition-all cursor-pointer">
+                  <MdChevronLeft size={28} />
+                </button>
+                <button onClick={nextImage} className="absolute right-6 p-2 rounded-full glass hover:bg-accent-primary/20 text-white/50 hover:text-white transition-all cursor-pointer">
+                  <MdChevronRight size={28} />
+                </button>
+              </>
+            )}
+          </div>
+
+          {project.banner.length > 1 && (
+            <div className="pb-6 flex justify-center gap-2">
+              {project.banner.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentImageIndex(idx)}
+                  className={`h-1 rounded-full transition-all duration-300 ${idx === currentImageIndex ? 'w-8 bg-accent-primary' : 'w-4 bg-white/10'}`}
+                />
+              ))}
+            </div>
           )}
         </div>
-        {project.banner.length > 1 && (
-          <div className="flex flex-row gap-3 mt-4">
-            {Array.from({ length: project.banner.length }).map((_, idx) => (
-              <span
-                key={idx}
-                className="w-2.5 h-2.5 border border-white rounded-full"
-                onClick={() => setCurrentImageIndex(idx)}
-                style={{
-                  cursor: "pointer",
-                  background: idx === currentImageIndex ? "white" : "transparent",
-                }}
-              ></span>
-            ))}
-          </div>
-        )}
-        <motion.div animate className="flex flex-col gap-2 px-6 pt-4 pb-5">
-          <div className="flex flex-row items-center justify-between gap-2">
-            <span className="text-[26px] leading-8">{project.name}</span>
-            <div className="flex flex-row items-center justify-center gap-1.5">
+
+        {/* Content Side */}
+        <div className="w-full lg:w-[40%] p-6 lg:p-10 flex flex-col gap-4 overflow-y-auto border-t lg:border-t-0 lg:border-l border-white/5">
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-1">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">Crafted Project</span>
+              <h2 className="text-2xl lg:text-3xl font-extrabold text-white leading-tight">{project.name}</h2>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
               {project.links.map((link) => (
                 <SocialBubbleBG
                   key={link.name}
                   social={{ url: link.url, ...socials[link.name] }}
-                  size={21}
+                  size={18}
                 />
               ))}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={"Live Preview of " + project.name}
+                  className="flex items-center gap-2 px-3 py-1.5 glass rounded-lg text-[11px] font-bold text-white/60 hover:text-white transition-all"
+                >
+                  Live Preview <MdOpenInNew size={14} />
+                </a>
+              )}
             </div>
           </div>
-          <div className="text-[17px] font-light opacity-90">
-            {project.description}
+
+          <div className="space-y-3">
+            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">Project Overview</h3>
+            <p className="text-white/60 leading-relaxed text-sm lg:text-base font-medium">
+              {project.description}
+            </p>
           </div>
-          <div className="flex flex-col gap-1.5 mt-1">
-            <span className="text-lg">Technologies used:</span>
-            <div className="flex flex-row flex-wrap gap-2.5">
+
+          <div className="space-y-4">
+            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">Stack & Tools</h3>
+            <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
-                <TechBubble
-                  key={tech}
-                  tech={technologies[tech]}
-                  hideName={true}
-                  size={45}
-                />
+                <div key={tech} className="flex items-center gap-2 px-3 py-2 glass rounded-xl border-white/5 group" title={technologies[tech]?.title}>
+                  <img
+                    src={technologies[tech]?.src}
+                    alt={technologies[tech]?.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-5 h-5 object-contain grayscale group-hover:grayscale-0 transition-all"
+                  />
+                  <span className="text-[11px] font-bold text-white/40 group-hover:text-white/80 transition-all">{technologies[tech]?.title}</span>
+                </div>
               ))}
             </div>
           </div>
-        </motion.div>
+
+          <button
+            onClick={closeDialog}
+            className="w-full py-3 glass rounded-xl text-xs font-black uppercase tracking-[0.2em] text-white/40 hover:text-white hover:bg-white/5 transition-all cursor-pointer mt-4"
+          >
+            Back to Portfolio
+          </button>
+        </div>
       </motion.div>
     </motion.div>
   );

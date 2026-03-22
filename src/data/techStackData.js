@@ -13,7 +13,6 @@ export const technologies = {
     title: 'Javascript',
     link: 'https://nodejs.org/',
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png",
-    radius: '8px'
   },
   bun: {
     title: 'Bun',
@@ -33,7 +32,7 @@ export const technologies = {
   java: {
     title: 'Java',
     link: 'https://www.oracle.com/java/technologies/',
-    src: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/182px-Java_programming_language_logo.svg.png'
+    src: 'https://openjdk.org/images/nanoduke.ico'
   },
   go: {
     title: 'Go',
@@ -64,7 +63,6 @@ export const technologies = {
     title: 'Tailwind CSS',
     link: 'https://tailwindcss.com/',
     src: "https://tailwindcss.com/favicons/apple-touch-icon.png?v=3",
-    radius: '14px'
   },
   mui: {
     title: 'Material UI',
@@ -75,7 +73,6 @@ export const technologies = {
     title: 'SASS',
     link: 'https://sass-css.org/',
     src: "https://sass-lang.com/favicon.ico",
-    radius: '14px'
   },
   motion: {
     title: 'Motion',
@@ -86,11 +83,6 @@ export const technologies = {
     title: 'Flask',
     link: 'https://flask.palletsprojects.com/',
     src: "https://flask.palletsprojects.com/en/stable/_static/flask-icon.svg"
-  },
-  django: {
-    title: 'Django',
-    link: 'https://www.djangoproject.com/',
-    src: "https://www.djangoproject.com/favicon.ico"
   },
   quart: {
     title: 'Quart',
@@ -106,7 +98,6 @@ export const technologies = {
     title: 'Express',
     link: 'https://expressjs.com/',
     src: "https://expressjs.com/images/favicon.png",
-    radius: '14px'
   },
   reactnative: {
     title: 'React Native',
@@ -142,7 +133,6 @@ export const technologies = {
     title: 'MySQL',
     link: 'https://dev.mysql.com/',
     src: "https://labs.mysql.com/common/themes/sakila/favicon.ico",
-    radius: '10px'
   },
   sqlite3: {
     title: 'Sqlite3',
@@ -163,7 +153,6 @@ export const technologies = {
     title: 'Selenium',
     link: 'https://www.selenium.dev/',
     src: "https://www.selenium.dev/favicons/apple-touch-icon-180x180.png",
-    radius: '8px'
   },
   docker: {
     title: 'Docker',
@@ -210,11 +199,6 @@ export const technologies = {
     link: 'https://en.wikipedia.org/wiki/WebSocket',
     src: 'https://raw.githubusercontent.com/tidwall/SwiftWebSocket/2.6.5/tools/res/logo.png'
   },
-  cfWorkers: {
-    title: 'Cf Workers',
-    link: 'https://workers.cloudflare.com',
-    src: 'https://workers.cloudflare.com/resources/logo/logo.svg'
-  },
   discordOAuth2: {
     title: 'Discord OAuth2',
     link: 'https://discord.com/developers/docs/topics/oauth2',
@@ -229,37 +213,42 @@ export const technologies = {
     title: "Pterodactyl",
     link: 'https://pterodactyl.io',
     src: 'https://pterodactyl.io/favicons/apple-touch-icon.png',
-    radius: '14px'
   },
   paypalsdk: {
     title: "Paypal SDK",
     link: 'https://developer.paypal.com/',
     src: 'https://www.paypalobjects.com/webstatic/developer/favicons/pp32.png',
-    radius: '14px'
   },
   osm: {
     title: "OSM",
     link: 'https://www.openstreetmap.org',
     src: 'https://www.openstreetmap.org/assets/favicon-194x194-79d3fb0152c735866e64b1d7535d504483cd13c2fad0131a6142bd9629d30de2.png',
-    radius: '8px'
   },
   androidStudio: {
     title: "Android Studio",
     link: 'https://developer.android.com/studio',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Android_Studio_Logo_2024.svg/210px-Android_Studio_Logo_2024.svg.png',
-    radius: '8px'
+    src: 'https://www.gstatic.com/devrel-devsite/prod/v8b8ef181e1dc913802015af34f7ea88ee446e0cb5daec5c977ac4c46a7a372bd/android/images/touchicon-180.png',
   },
   linux: {
     title: "Linux",
     link: 'https://www.linux.org',
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/500px-Tux.svg.png',
-    radius: '8px'
+  },
+  catalyst: {
+    title: "Zoho Catalyst",
+    link: 'https://www.zoho.com/catalyst/',
+    src: 'https://avatars.githubusercontent.com/u/61141689?s=200&v=4'
+  },
+  deluge: {
+    title: "Deluge",
+    link: 'https://www.zoho.com/deluge/',
+    src: 'https://www.zohowebstatic.com/sites/zweb/images/productlogos/deluge-dark.svg'
   }
 }
 
 const techStackData = [
   {
-    type: 'Programming Languages',
+    type: 'Programming',
     stack: [
       'py',
       'ts',
@@ -268,11 +257,12 @@ const techStackData = [
       'c',
       'bun',
       'java',
-      'go'
+      'go',
+      'deluge'
     ]
   },
   {
-    type: 'Frontend Development',
+    type: 'Frontend',
     stack: [
       'next',
       'react',
@@ -288,18 +278,18 @@ const techStackData = [
     ]
   },
   {
-    type: 'Backend Development',
+    type: 'Backend',
     stack: [
       'flask',
-      'django',
       'quart',
       'node',
       'express',
-      'paypalsdk'
+      'paypalsdk',
+      'catalyst'
     ]
   },
   {
-    type: 'Mobile Development',
+    type: 'Mobile',
     stack: [
       'reactnative',
       'expo',

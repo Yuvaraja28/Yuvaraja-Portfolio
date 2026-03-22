@@ -1,0 +1,70 @@
+---
+import '../index.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Blocking: adds .js to <html> before CSS renders.
+         Without JS, class is never added → [data-animate] opacity:0 never applies → content always visible. -->
+    <script>document.documentElement.classList.add('js')</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="author" content="Yuvaraja">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yuv.1he.dev/">
+    <meta name="keywords" content="Yuvaraja, Yuvaraja Murali, Yuvaraja28, yuv the dev, yuv.the.dev, developer, Python, Node.js, C/C++, web development, HTML, CSS, Next.js, MongoDB, Redis, MySQL, computer networks, Linux, cloud computing, freelance developer" />
+    <meta property="og:title" content="Yuvaraja Murali">
+    <meta name="twitter:title" content="Yuvaraja Murali">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content={Astro.url.href}>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Yuvaraja Murali">
+    <meta name="description" content="Hey there! I'm a passionate and dedicated developer with expertise in Python, JavaScript, and C/C++. In web development, I leverage technologies like HTML, CSS, and various JavaScript frameworks such as Next.js to craft dynamic and responsive applications. My proficiency extends to managing databases such as MongoDB, Redis, and MySQL, ensuring efficient data storage and retrieval.">
+    <meta property="og:description" content="Hey there! I'm a passionate and dedicated developer with expertise in Python, JavaScript, and C/C++. In web development, I leverage technologies like HTML, CSS, and various JavaScript frameworks such as Next.js to craft dynamic and responsive applications. My proficiency extends to managing databases such as MongoDB, Redis, and MySQL, ensuring efficient data storage and retrieval.">
+    <meta name="twitter:description" content="Hey there! I'm a passionate and dedicated developer with expertise in Python, JavaScript, and C/C++. In web development, I leverage technologies like HTML, CSS, and various JavaScript frameworks such as Next.js to craft dynamic and responsive applications. My proficiency extends to managing databases such as MongoDB, Redis, and MySQL, ensuring efficient data storage and retrieval.">
+    <meta name="theme-color" content="#f3e8c9">
+    <meta property="og:image" content="https://yuv.1he.dev/yuvaraja.png">
+    <meta name="twitter:image" content="https://yuv.1he.dev/yuvaraja.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/ico" href="https://yuv.1he.dev/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yuvaraja",
+        "url": "https://yuv.1he.dev",
+        "jobTitle": "Software Developer",
+        "description": "Hey there! I'm a passionate and dedicated developer with expertise in Python, JavaScript, and C/C++. In web development, I leverage technologies like HTML, CSS, and various JavaScript frameworks such as Next.js to craft dynamic and responsive applications. My proficiency extends to managing databases such as MongoDB, Redis, and MySQL, ensuring efficient data storage and retrieval.",
+        "logo": "https://yuv.1he.dev/favicon.ico",
+        "sameAs": [
+            "mailto:yuv.the.dev@gmail.com", "https://github.com/Yuvaraja28", "https://www.linkedin.com/in/yuvaraja-murali", "https://x.com/yuvaraja_28"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+    <script>
+      // Adds .is-visible to [data-animate]/[data-stagger] when scrolled into view.
+      // Runs after HTML is painted — content is always visible for no-JS users.
+      const obs = new IntersectionObserver(
+        (entries) => entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        }),
+        { threshold: 0.12, rootMargin: '-40px 0px' }
+      );
+      document.querySelectorAll('[data-animate], [data-stagger]').forEach(el => obs.observe(el));
+    </script>
+  </body>
+</html>

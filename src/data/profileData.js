@@ -1,25 +1,47 @@
 const profileData = {
   name: 'Yuvaraja',
   fullName: 'Yuvaraja Murali',
-  role: 'Full Stack Developer',
-  company: 'Devley',
+  moto: 'Secure by Design',
+  tags: [
+    "Code",
+    "Secure",
+    "Ship"
+  ],
   location: 'India',
-  image: 'assets/images/profile.jpg',
-  updated: 'Oct 2025',
+  image: 'assets/images/profile.avif',
+  updated: 'Mar 2026',
   resume: 'https://cdn.1he.dev/Yuvaraja/Yuvaraja_Resume.pdf',
   mail: 'yuv.the.dev@gmail.com',
-  company_url: 'https://devley.1he.dev',
-  about_title: [
-    'Versatile,',
-    'Secure &',
-    'Scalable'
-  ],
+  shortAbout: 'a security-focused full-stack engineer who bridges complex systems and human-centric design - building applications that are not just performant, but resilient by design.',
   about: [
-    "Hey there! I'm a passionate and dedicated developer with expertise in Python, JavaScript, and C/C++. In web development, I leverage technologies like HTML, CSS, and various JavaScript frameworks such as Next.js to craft dynamic and responsive applications. My proficiency extends to managing databases such as MongoDB, Redis, and MySQL, ensuring efficient data storage and retrieval.",
-    "Beyond programming, I have a keen interest in computer networks and Linux, focusing on enhancing system security and performance. I have hands-on experience in DevOps, having assisted many clients in setting up and deploying their projects in Linux environments. This includes deploying everything from React applications to Django projects and various software solutions, ensuring smooth operation and scalability. My expertise in DevOps allows me to optimize workflows and infrastructure, enabling clients to achieve reliable and efficient project deployments.",
-    "I've also delved into machine learning with TensorFlow, working on small projects that have deepened my understanding of its concepts and applications. From building and training models to exploring data insights, I bring a foundational knowledge of machine learning techniques to my projects.",
-    "As a freelancer, I prioritize delivering high-quality work and exceeding client expectations. Whether you need a custom web application, robust network setup, scalable cloud solution, or streamlined DevOps processes, I'm here to collaborate and turn your ideas into reality. Feel free to reach out via Email or Discord to discuss how we can bring your project to life!",
-  ]  
-}
+    "I'm a full-stack developer with a strong focus on cybersecurity and secure software engineering. Currently joining TCS's Cyber Security unit after competing through the HackQuest Prime hiring track — a path that reflects where my interests have always been: building things that are not just functional, but resilient.",
+    "My stack spans React, Next.js, Python, and MongoDB, but my lens is always security-first — from how APIs are architected to how data flows across systems. I've built production-grade applications and an AI-powered campus surveillance system using ResNetV2 and FaceNet for real-time face recognition.",
+    "Beyond the code, I'm comfortable in Linux environments, deploying and hardening projects with scalability in mind. I enjoy the intersection of DevOps and security, where infrastructure choices directly impact attack surface.",
+    "I'm driven by a simple belief: great software isn't just about what it does — it's about what it can't be made to do. Let's build something worth protecting."
+  ],
+  coreFocus: [
+    { title: "Cybersecurity", highlight: false },
+    { title: "Secure Software Engineering", highlight: false },
+    { title: "HackQuest S10 · Top 75 · TCS Prime", highlight: true },
+    { title: "Linux Hardening", highlight: false },
+    { title: "DevSecOps", highlight: false }
+  ],
+  stack: [
+    { title: "Next.js / React", highlight: false },
+    { title: "React Native", highlight: false },
+    { title: "Python", highlight: false },
+    { title: "TypeScript / JS", highlight: false },
+    { title: "MongoDB", highlight: false },
+    { title: "MySQL / Redis", highlight: false },
+    { title: "TensorFlow", highlight: false }
+  ],
+  background: [
+    // { title: "Systems Engineer @ TCS", highlight: true },
+    { title: "Ex-Trainee @ Zoho", highlight: true },
+    { title: "Ex-Intern @ Ignite Skylabs", highlight: true },
+    { title: "AI / Face Recognition (ResNetV2, FaceNet)", highlight: false },
+    { title: "Freelance DevOps", highlight: false }
+  ]
+};
 
 export default profileData;

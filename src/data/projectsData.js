@@ -1,33 +1,8 @@
 const projectsData = {
-  printa4: {
-    name: "PrintA4",
-    title: "Kiosk Printing Solution",
-    showcase: "assets/projects/printa4/printa4.png",
-    banner: [
-      "assets/projects/printa4/printa4-banner.png",
-      "assets/projects/printa4/printa4-banner-2.png",
-    ],
-    links: [
-      {
-        name: "web",
-        url: "https://printa4.in",
-      },
-    ],
-    technologies: [
-      "react",
-      "node",
-      "tailwindcss",
-      "mongodb",
-      "websocket",
-      "git",
-    ],
-    description:
-      "Developed as part of IGSL, India’s first kiosk printing service, enabling organizations to print directly from mobile devices and receive documents in seconds. Engineered an instant mobile and cloud-based printing solution with a secure, user-friendly kiosk interface.",
-  },
   mitilence: {
     name: "Mitilence'25",
     title: "MVIT",
-    showcase: "assets/projects/mitilence/mitilence.png",
+    showcase: "assets/projects/mitilence/mitilence-banner.png",
     banner: [
       "assets/projects/mitilence/mitilence-banner.png",
       "https://www.youtube.com/embed/eGJpRt2c2no?si=yqYhNTA0rwPbkJ80",
@@ -57,7 +32,7 @@ const projectsData = {
   devley: {
     name: "Devley",
     title: "Digital Marketplace",
-    showcase: "assets/projects/devley/devley.png",
+    showcase: "assets/projects/devley/devley-banner.png",
     banner: [
       "assets/projects/devley/devley-banner.png",
       "assets/projects/devley/devley-banner-2.png",
@@ -85,6 +60,33 @@ const projectsData = {
     ],
     description:
       "Developed a digital marketplace offering purchase digital products. The dashboard uses Paypal for Payment Processing, Discord OAuth for authentication and MongoDB for database management, serving verified customers.",
+  },
+  pts: {
+    name: "Pterodactyl Trial Servers",
+    title: "Cloud Servers",
+    showcase: "assets/projects/trial-servers/trial-servers-banner.png",
+    banner: ["assets/projects/trial-servers/trial-servers-banner.png"],
+    links: [
+      {
+        name: "github",
+        url: "https://github.com/yuvaraja28/Pterodactyl-Trial-Servers",
+      },
+      {
+        name: "web",
+        url: "https://trial.mysticlouds.com",
+      },
+    ],
+    technologies: [
+      "react",
+      "vite",
+      "express",
+      "websocket",
+      "pterodactyl",
+      "reCaptcha",
+      "git",
+    ],
+    description:
+      "Developed a client project that simplifies server management and enhances user experience by enabling temporary server access without requiring account in the Pterodactyl panel.",
   },
   ridemap: {
     name: "Ridemap",
@@ -121,7 +123,7 @@ const projectsData = {
   dojo: {
     name: "Dojo 2.0",
     title: "Lucas TVS",
-    showcase: "assets/projects/dojo/dojo.png",
+    showcase: "assets/projects/dojo/dojo-banner.png",
     banner: [
       "assets/projects/dojo/dojo.png",
       "assets/projects/dojo/dojo-banner.png",
@@ -153,37 +155,35 @@ const projectsData = {
     description:
       "DOJO 2.0 is a digital transformation project for Lucas TVS, featuring a kiosk-based self-enrollment system and a React.js admin dashboard. It automates trainee tracking, and evaluation, reducing manual effort and improving accuracy.",
   },
-  pts: {
-    name: "Pterodactyl Trial Servers",
-    title: "Cloud Servers",
-    showcase: "assets/projects/trial-servers/trial-servers.png",
-    banner: ["assets/projects/trial-servers/trial-servers-banner.png"],
+  printa4: {
+    name: "PrintA4",
+    title: "Kiosk Printing Solution",
+    showcase: "assets/projects/printa4/printa4-banner.png",
+    banner: [
+      "assets/projects/printa4/printa4-banner.png",
+      "assets/projects/printa4/printa4-banner-2.png",
+    ],
     links: [
       {
-        name: "github",
-        url: "https://github.com/yuvaraja28/Pterodactyl-Trial-Servers",
-      },
-      {
         name: "web",
-        url: "https://trial.mysticlouds.com",
+        url: "https://printa4.in",
       },
     ],
     technologies: [
       "react",
-      "vite",
-      "express",
+      "node",
+      "tailwindcss",
+      "mongodb",
       "websocket",
-      "pterodactyl",
-      "reCaptcha",
       "git",
     ],
     description:
-      "Developed a client project that simplifies server management and enhances user experience by enabling temporary server access without requiring account in the Pterodactyl panel.",
+      "Developed as part of IGSL, India’s first kiosk printing service, enabling organizations to print directly from mobile devices and receive documents in seconds. Engineered an instant mobile and cloud-based printing solution with a secure, user-friendly kiosk interface.",
   },
   fic: {
     name: "Frix Cloud",
     title: "Remote Server Management",
-    showcase: "assets/projects/frix-cloud/frix-cloud.png",
+    showcase: "assets/projects/frix-cloud/frix-cloud-banner.png",
     banner: ["assets/projects/frix-cloud/frix-cloud-banner.png"],
     links: [
       {
@@ -198,7 +198,7 @@ const projectsData = {
   bvault: {
     name: "Books Vault",
     title: "Book Purchase",
-    showcase: "assets/projects/bvault/bvault.png",
+    showcase: "assets/projects/bvault/bvault-banner.png",
     banner: [
       "assets/projects/bvault/bvault-banner.png",
       "assets/projects/bvault/bvault-banner-2.png",
@@ -219,7 +219,7 @@ const projectsData = {
   flick: {
     name: "Flicksnack",
     title: "Food Counter Booking",
-    showcase: "assets/projects/flicksnack/flicksnack.png",
+    showcase: "assets/projects/flicksnack/flicksnack-banner.png",
     banner: [
       "assets/projects/flicksnack/flicksnack-banner-2.png",
       "assets/projects/flicksnack/flicksnack-banner-3.png",
@@ -239,7 +239,7 @@ const projectsData = {
   tds: {
     name: "TD Problem Solver",
     title: "Thermodynamics",
-    showcase: "assets/projects/td/td.png",
+    showcase: "assets/projects/td/td-banner.png",
     banner: ["assets/projects/td/td-banner.png"],
     links: [
       {
@@ -258,7 +258,7 @@ const projectsData = {
   stc: {
     active: true,
     name: "Student Connect",
-    showcase: "assets/projects/students-connect/students-connect.png",
+    showcase: "assets/projects/students-connect/students-connect-banner.png",
     banner: [
       "assets/projects/students-connect/students-connect-banner.png",
       "assets/projects/students-connect/students-connect-2.png",
@@ -292,7 +292,7 @@ const projectsData = {
   dip: {
     name: "Diso Player",
     title: "Spotify Inspired",
-    showcase: "assets/projects/disco-player/disco-player.png",
+    showcase: "assets/projects/disco-player/disco-player-banner.png",
     banner: ["assets/projects/disco-player/disco-player-banner.png"],
     links: [
       {

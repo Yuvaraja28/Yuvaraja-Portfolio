@@ -1,133 +1,87 @@
 import React from "react";
-import { motion } from "motion/react";
-import { useNavigate } from "react-router-dom";
 import projectsData from '../data/projectsData';
 import { MdArrowOutward } from "react-icons/md";
-import { IoIosArrowRoundDown } from "react-icons/io";
 
 export default function Projects() {
-  const PROJECT_MULTIPLIER = 6
-  const navigation = useNavigate()
-  const [projectsLimit, setProjectsLimit] = React.useState(PROJECT_MULTIPLIER)
+  const PROJECT_MULTIPLIER = 6;
+  const [projectsLimit, setProjectsLimit] = React.useState(PROJECT_MULTIPLIER);
+
+  const activeProjects = React.useMemo(() =>
+    Object.entries(projectsData).filter(([_, p]) => p.active !== false), []);
 
   return (
-    <div
-      className="flex flex-col items-center gap-8"
-    >
-      <motion.div
-        initial={{
-          translateY: 100,
-          opacity: 0
-        }}
-        animate={{
-          translateY: [100, 0],
-          opacity: [0, 1]
-        }}
-        transition={{
-          duration: 0.8,
-          type: 'spring'
-        }}
-        className="flex flex-row flex-wrap justify-between items-center border-t-4 border-font-color w-full"
-      >
-        <h2
-          className="text-[42px] sm:text-[54px] font-medium"
-        >
-          Projects
-        </h2>
-        <span
-          className="flex flex-row items-center gap"
-        >
-          My latest projects <IoIosArrowRoundDown size={22} />
-        </span>
-      </motion.div>
-      <div
-        className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-5"
-      >
-        {Object.entries(projectsData)
-          .slice(0, projectsLimit)
-          .filter(project => 
-            (project[1]?.active == undefined) ? true : project[1].active
-          )
-          .map(([projectKey, project]) => 
-          <motion.div
-            initial={{
-              translateX: 200,
-              opacity: 0
-            }}
-            animate={{
-              translateX: 0,
-              opacity: 1
-            }}
-            transition={{
-              duration: 0.8,
-              type: 'spring'
-            }}
-            style={{
-              cursor: 'pointer'
-            }}
-            key={projectKey}
-            layoutId={`project-popup-${projectKey}`}
-            onClick={() => navigation(`/${projectKey}`)}
-            aria-label={`This Link takes you to ${project.name} project site.`}
-            className="flex flex-col items-center gap-[28px] select-none group bg-font-color/5 border border-white/5 drop-shadow-md rounded-3xl p-4 sm:p-6"
-          >
-            <motion.img
-              width={1920}
-              height={1080}
-              src={project.showcase}
-              alt={project.name}
-              loading='lazy'
-              layoutId={`project-image-popup-${projectKey}`}
-              style={{ width: '100%', height: '265px', objectFit: 'contain' }}
-            />
-            <div
-              className="flex flex-col gap-[4px] mx-2"
-            >
-              <span
-                className="flex flex-row justify-between gap-2 items-center leading-[30px] text-[22px] sm:text-[25px]"
-              >
-                {project.name} {project?.title && '-'} {project?.title}
-                <MdArrowOutward size={26} className="opacity-0 group-hover:opacity-100 transition-opacity duration-600" />
-              </span>
-              <div
-                className="text-[16.5px] sm:text-[18px] font-light opacity-90"
-              >
-                {project.description}
-              </div>
-              {/* <div
-                className="text-[18px] font-light sm:text-[20px] opacity-90"
-              >
-                <b className='font-medium'>◎︎ Technologies: </b>{project.technologies.join(', ')}
-              </div> */}
-            </div>
-          </motion.div>
-        )}
-      </div>
-      {(Object.values(projectsData).filter(p => !p.active).length > projectsLimit) &&
-        <div
-          className='flex w-100 justify-center items-center'
-        >
-          <motion.button
-            whileHover={{
-              scale: 0.97
-            }}
-            whileTap={{
-              scale: 1.05
-            }}
-            transition={{
-              duration: 0.4,
-              type: 'spring'
-            }}
-            style={{
-              cursor: 'pointer'
-            }}
-            onClick={() => setProjectsLimit((i) => i+PROJECT_MULTIPLIER)}
-            className={`px-6 py-3 text-background-color bg-font-color font-semibold border-[3px] rounded-2xl selection:text-background-color selection:bg-font-color`}
-          >
-            Show more projects
-          </motion.button>
+    <section id="projects" className="flex flex-col gap-10 px-6 md:px-12 py-8 sm:pb-18 sm:pt-26">
+      <div data-animate="slide-left" className="flex flex-col gap-3">
+        <div className="flex items-center gap-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+            Crafted <span className="text-gradient">Projects</span>
+          </h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-accent-primary to-transparent opacity-20"></div>
         </div>
-      }
-    </div>
+        <p className="text-white/40 text-base md:text-lg max-w-2xl font-medium">
+          A collection of digital products built with scale and performance in mind.
+        </p>
+      </div>
+
+      <div data-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        {activeProjects.slice(0, projectsLimit).map(([projectKey, project]) => (
+          <div
+            key={projectKey}
+            onClick={() => window.location.hash = projectKey}
+            className="hover-lift group relative cursor-pointer glass rounded-[24px] overflow-hidden border-white/5 hover:border-accent-primary/20 transition-colors duration-500 shadow-2xl flex flex-col h-full"
+          >
+            <div className="relative aspect-[16/10] overflow-hidden bg-white/5 min-h-[200px]">
+              {project.showcase ? (
+                <img src={project.showcase} alt={project.name} loading="lazy" decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-white/5 text-xs font-bold uppercase tracking-widest">
+                  No Preview Available
+                </div>
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-background-color/90 via-background-color/10 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+              <div className="absolute top-4 right-4">
+                <div className="p-2.5 rounded-xl glass border-white/5 text-white/50 group-hover:text-white group-hover:bg-accent-primary transition-all duration-300">
+                  <MdArrowOutward size={18} />
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 flex flex-col gap-3 flex-1">
+              <div className="flex flex-col gap-1">
+                <h3 className="text-lg font-extrabold text-white">{project.name}</h3>
+                {project.title && (
+                  <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">{project.title}</p>
+                )}
+              </div>
+              <p className="text-white/50 text-xs md:text-sm line-clamp-2 leading-relaxed font-medium">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mt-auto pt-4">
+                {project.technologies?.slice(0, 3).map((tech, i) => (
+                  <span key={i} className="text-[10px] px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-white/40 font-mono">{tech}</span>
+                ))}
+                {project.technologies?.length > 3 && (
+                  <span className="text-[10px] px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-white/40 font-mono">
+                    +{project.technologies.length - 3}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {activeProjects.length > projectsLimit && (
+        <div className="flex justify-center">
+          <button
+            onClick={() => setProjectsLimit(prev => prev + PROJECT_MULTIPLIER)}
+            className="hover-scale px-8 py-4 glass border-white/10 hover:border-accent-primary/30 rounded-2xl font-bold transition-colors duration-300 flex items-center gap-2 cursor-pointer"
+          >
+            Explore More Projects <span className="text-white/40">↓</span>
+          </button>
+        </div>
+      )}
+    </section>
   )
 }
