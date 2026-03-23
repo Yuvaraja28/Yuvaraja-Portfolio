@@ -16,10 +16,6 @@ export const socials = {
     name: 'LeetCode',
     comp: SiLeetcode,
   },
-  codechef: {
-    name: 'CodeChef',
-    comp: SiCodechef,
-  },
   linkedin: {
     name: 'Linkedin',
     comp: FaLinkedin,
@@ -40,10 +36,6 @@ export const socials = {
     name: 'Youtube',
     comp: FaYoutube,
   },
-  paypal: {
-    name: 'Paypal',
-    comp: FaPaypal,
-  },
   playstore: {
     name: 'PlayStore',
     comp: IoLogoGooglePlaystore,
@@ -59,10 +51,6 @@ const socialsData = [
   {
     key: 'leetcode',
     url: 'https://leetcode.com/u/yuvaraja28/'
-  },
-  {
-    key: 'codechef',
-    url: 'https://www.codechef.com/users/yuvaraja28'
   },
   {
     key: 'linkedin',
@@ -85,12 +73,8 @@ const socialsData = [
   },
   {
     key: 'youtube',
-    url: 'https://www.youtube.com/channel/UCNwoToYIOA285x9Yg-ChNyw'
+    url: 'https://www.youtube.com/@yuv-the-dev'
   },
-  {
-    key: 'paypal',
-    url: 'https://www.paypal.com/paypalme/YuvarajaMurali'
-  }
 ]
 
 export default socialsData;

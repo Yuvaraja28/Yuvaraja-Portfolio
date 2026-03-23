@@ -1,27 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/header.jsx';
-import Footer from '../components/footer.jsx';
-import AboutMe from '../components/aboutme.jsx';
-import Landing from '../components/landing.jsx';
-import Projects from '../components/projects.jsx';
-import Spotlight from '../components/spotlight.jsx';
-import TechStack from '../components/techStack.jsx';
-import Experiences from '../components/experiences.jsx';
-import ProjectDialogWrapper from '../components/ProjectDialogWrapper.jsx';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.jsx";
+import Footer from "../components/footer.jsx";
+import AboutMe from "../components/aboutme.jsx";
+import Landing from "../components/landing.jsx";
+import Projects from "../components/projects.jsx";
+import Spotlight from "../components/spotlight.jsx";
+import TechStack from "../components/techStack.jsx";
+import Experiences from "../components/experiences.jsx";
+import ProjectDialogWrapper from "../components/ProjectDialogWrapper.jsx";
 ---
 
 <Layout title="Yuvaraja Murali">
-  <div class="relative bg-background-color selection:bg-accent-primary selection:text-white min-h-screen">
+  <div
+    class="relative bg-background-color selection:bg-accent-primary selection:text-white min-h-screen"
+  >
     <!-- Interactive sticky header - needs client JS for scroll animations -->
     <Header client:load />
-    
+
     <!-- Hero section - needs client JS for enter animations -->
     <div class="sticky top-0 z-0 h-screen w-full overflow-hidden">
       <Landing client:load />
     </div>
 
-    <main class="relative z-10 bg-background-color shadow-[0_-50px_100px_rgba(0,0,0,0.8)] rounded-t-[40px] -mt-10">
+    <main
+      class="relative z-10 bg-background-color shadow-[0_-50px_100px_rgba(0,0,0,0.8)] rounded-t-[40px]"
+    >
       <!-- Static content: renders server-side HTML, hydrates for motion when scrolled to -->
       <AboutMe client:visible />
       <Experiences client:visible />

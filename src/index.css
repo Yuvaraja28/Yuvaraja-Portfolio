@@ -15,12 +15,16 @@
 }
 
 :root.cyber-theme {
-  --color-font-color: #d1d5db; /* Light Steel */
-  --color-background-color: #0a0a0a; /* Deep Charcoal */
+  --color-font-color: #d1d5db;
+  /* Light Steel */
+  --color-background-color: #0a0a0a;
+  /* Deep Charcoal */
   --color-card-bg: rgba(255, 170, 0, 0.03);
   --color-card-border: rgba(255, 170, 0, 0.2);
-  --color-accent-primary: #ffaa00; /* Neon Amber */
-  --color-accent-secondary: #ff4400; /* Industrial Orange */
+  --color-accent-primary: #ffaa00;
+  /* Neon Amber */
+  --color-accent-secondary: #ff4400;
+  /* Industrial Orange */
   --color-menu-color: rgba(255, 170, 0, 0.05);
   --color-menu-hover: rgba(255, 170, 0, 0.15);
   --color-line-color: rgba(255, 170, 0, 0.2);
@@ -28,14 +32,16 @@
   --shadow-accent: rgba(255, 170, 0, 0.5) !important;
 }
 
-:root.cyber-theme .text-white\/40, 
-:root.cyber-theme .text-white\/50, 
+:root.cyber-theme .text-white\/40,
+:root.cyber-theme .text-white\/50,
 :root.cyber-theme .text-white\/60 {
-  color: #9ca3af !important; /* Steel gray */
+  color: #9ca3af !important;
+  /* Steel gray */
 }
 
 :root.cyber-theme .text-white {
-  color: #f3f4f6 !important; /* Silver White */
+  color: #f3f4f6 !important;
+  /* Silver White */
 }
 
 :root.cyber-theme .bg-accent-primary {
@@ -84,6 +90,36 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: none !important;
+}
+
+/* Theme Transition Ripple */
+.theme-ripple {
+  position: fixed;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-expand 3s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes ripple-expand {
+  0% {
+    transform: scale(0);
+    opacity: 0.4;
+    /* Much subtler start */
+  }
+
+  30% {
+    opacity: 0.4;
+    /* Hold subtle opacity */
+  }
+
+  100% {
+    transform: scale(450);
+    /* Massive scale */
+    opacity: 0;
+    /* Long, smooth fade out */
+  }
 }
 
 /* Specific image filters for cyber theme */

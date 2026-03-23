@@ -5,24 +5,50 @@ import socialsData, { socials } from '.././data/socialsData';
 
 export default function Landing() {
   const [isCyber, setIsCyber] = useState(false);
+  const [ripple, setRipple] = useState(null);
 
   useEffect(() => {
     // Sync state with DOM in case it's already set (e.g. from a previous click)
     setIsCyber(document.documentElement.classList.contains('cyber-theme'));
   }, []);
 
-  const toggleCyberTheme = () => {
-    const newState = !isCyber;
-    setIsCyber(newState);
-    document.documentElement.classList.toggle('cyber-theme', newState);
+  const toggleCyberTheme = (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    setRipple({ x, y });
+
+    setTimeout(() => {
+      const newState = !isCyber;
+      setIsCyber(newState);
+      document.documentElement.classList.toggle('cyber-theme', newState);
+    }, 1000);
+
+    setTimeout(() => {
+      setRipple(null);
+    }, 2100);
   };
 
   return (
     <div className='relative w-full h-full px-6 lg:px-12 flex flex-col overflow-hidden'>
+      {ripple && (
+        <div
+          className="theme-ripple"
+          style={{
+            left: ripple.x,
+            top: ripple.y,
+            width: '20px',
+            height: '20px',
+            marginLeft: '-10px',
+            marginTop: '-10px',
+            backgroundColor: !isCyber ? '#ffaa00' : '#ffffff'
+          }}
+        />
+      )}
       <ModernBackground isCyber={isCyber} />
 
       <div className="hero-container flex-1 flex flex-col justify-center items-center gap-5 text-center z-10 py-12">
-        <div className="flex flex-col gap-6 max-w-5xl mx-auto">
+        <div className="flex flex-col gap-5 sm:gap-6 max-w-5xl mx-auto">
           <div className="hero-item flex items-center justify-center">
             <span className="px-4 py-1.5 rounded-full glass text-[12px] font-bold tracking-[0.2em] uppercase flex items-center gap-3 select-none">
               <span className="relative flex h-2 w-2">
