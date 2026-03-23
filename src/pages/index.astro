@@ -15,10 +15,8 @@ import ProjectDialogWrapper from "../components/ProjectDialogWrapper.jsx";
   <div
     class="relative bg-background-color selection:bg-accent-primary selection:text-white min-h-screen"
   >
-    <!-- Interactive sticky header - needs client JS for scroll animations -->
     <Header client:load />
 
-    <!-- Hero section - needs client JS for enter animations -->
     <div class="sticky top-0 z-0 h-screen w-full overflow-hidden">
       <Landing client:load />
     </div>
@@ -26,14 +24,10 @@ import ProjectDialogWrapper from "../components/ProjectDialogWrapper.jsx";
     <main
       class="relative z-10 bg-background-color shadow-[0_-50px_100px_rgba(0,0,0,0.8)] rounded-t-[40px]"
     >
-      <!-- Static content: renders server-side HTML, hydrates for motion when scrolled to -->
       <AboutMe client:visible />
       <Experiences client:visible />
-      <!-- Spotlight uses window.innerWidth heavily, must be client-only -->
       <Spotlight client:only="react" />
-      <!-- Projects needs click handler for dialog -->
       <Projects client:visible />
-      <!-- Tech stack is mostly static -->
       <TechStack client:visible />
     </main>
 
@@ -41,7 +35,6 @@ import ProjectDialogWrapper from "../components/ProjectDialogWrapper.jsx";
       <Footer client:visible />
     </div>
 
-    <!-- ProjectDialog only appears on click, no need to preload -->
     <ProjectDialogWrapper client:load />
   </div>
 </Layout>
