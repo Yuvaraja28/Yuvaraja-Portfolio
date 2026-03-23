@@ -77,7 +77,7 @@ export default function ProjectDialog({ id }) {
                     alt={project.name}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-contain rounded-xl shadow-2xl"
+                    className="w-full h-full object-contain rounded-xl shadow-2xl no-tint"
                   />
                 )}
               </motion.div>
@@ -155,7 +155,7 @@ export default function ProjectDialog({ id }) {
                     alt={technologies[tech]?.title}
                     loading="lazy"
                     decoding="async"
-                    className="w-5 h-5 object-contain grayscale group-hover:grayscale-0 transition-all"
+                    className="w-5 h-5 object-contain grayscale group-hover:grayscale-0 transition-all no-tint"
                   />
                   <span className="text-[11px] font-bold text-white/40 group-hover:text-white/80 transition-all">{technologies[tech]?.title}</span>
                 </div>

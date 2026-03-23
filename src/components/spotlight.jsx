@@ -119,7 +119,7 @@ export default function Spotlight() {
                       alt={event.title}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover rounded-[32px]"
+                      className="w-full h-full object-cover rounded-[32px] no-tint"
                     />
                   </motion.div>
                   <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent transition-opacity duration-500 rounded-[32px] ${position === 0 ? 'opacity-100' : 'opacity-0'}`}>

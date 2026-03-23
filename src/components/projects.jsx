@@ -11,6 +11,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="flex flex-col gap-10 px-6 md:px-12 py-8 sm:pb-18 sm:pt-26">
+      <div className="section-grid"></div>
       <div data-animate="slide-left" className="flex flex-col gap-3">
         <div className="flex items-center gap-4">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
@@ -33,7 +34,7 @@ export default function Projects() {
             <div className="relative aspect-[16/10] overflow-hidden bg-white/5 min-h-[200px]">
               {project.showcase ? (
                 <img src={project.showcase} alt={project.name} loading="lazy" decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 no-tint" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-white/5 text-xs font-bold uppercase tracking-widest">
                   No Preview Available

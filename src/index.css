@@ -11,6 +11,54 @@
   --color-menu-hover: rgba(255, 255, 255, 0.08);
   --color-line-color: rgba(255, 255, 255, 0.08);
   --color-social-hover: rgba(255, 255, 255, 0.1);
+  --shadow-accent: rgba(99, 102, 241, 0.3);
+}
+
+:root.cyber-theme {
+  --color-font-color: #d1d5db; /* Light Steel */
+  --color-background-color: #0a0a0a; /* Deep Charcoal */
+  --color-card-bg: rgba(255, 170, 0, 0.03);
+  --color-card-border: rgba(255, 170, 0, 0.2);
+  --color-accent-primary: #ffaa00; /* Neon Amber */
+  --color-accent-secondary: #ff4400; /* Industrial Orange */
+  --color-menu-color: rgba(255, 170, 0, 0.05);
+  --color-menu-hover: rgba(255, 170, 0, 0.15);
+  --color-line-color: rgba(255, 170, 0, 0.2);
+  --color-social-hover: rgba(255, 170, 0, 0.25);
+  --shadow-accent: rgba(255, 170, 0, 0.5) !important;
+}
+
+:root.cyber-theme .text-white\/40, 
+:root.cyber-theme .text-white\/50, 
+:root.cyber-theme .text-white\/60 {
+  color: #9ca3af !important; /* Steel gray */
+}
+
+:root.cyber-theme .text-white {
+  color: #f3f4f6 !important; /* Silver White */
+}
+
+:root.cyber-theme .bg-accent-primary {
+  background-color: var(--color-accent-primary) !important;
+}
+
+:root.cyber-theme .from-accent-primary {
+  --tw-gradient-from: var(--color-accent-primary) !important;
+  --tw-gradient-to: var(--color-accent-secondary) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+:root.cyber-theme .to-accent-secondary {
+  --tw-gradient-to: var(--color-accent-secondary) !important;
+}
+
+:root.cyber-theme .to-transparent {
+  --tw-gradient-to: transparent !important;
+}
+
+:root.cyber-theme .via-accent-secondary {
+  --tw-gradient-to: transparent !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-secondary), var(--tw-gradient-to) !important;
 }
 
 * {
@@ -18,6 +66,110 @@
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+}
+
+:root.cyber-theme * {
+  font-family: "Space Mono", monospace !important;
+  text-shadow: 0 0 4px rgba(255, 170, 0, 0.2);
+}
+
+:root.cyber-theme .glass {
+  box-shadow: 0 0 20px rgba(255, 170, 0, 0.15);
+}
+
+:root.cyber-theme .text-gradient {
+  background: linear-gradient(135deg, #ffaa00 0%, #ff4400 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none !important;
+}
+
+/* Specific image filters for cyber theme */
+:root.cyber-theme img:not(.no-tint) {
+  filter: sepia(100%) hue-rotate(-10deg) saturate(200%) brightness(80%) contrast(110%);
+}
+
+:root.cyber-theme img.profile-img {
+  filter: grayscale(100%) brightness(90%) contrast(110%) !important;
+}
+
+:root.cyber-theme .bg-white {
+  background-color: #ffaa00 !important;
+  color: #000 !important;
+}
+
+:root.cyber-theme .text-black {
+  color: #000 !important;
+}
+
+:root.cyber-theme ::-webkit-scrollbar-thumb {
+  background: #ffaa00;
+}
+
+:root.cyber-theme .bg-mesh {
+  filter: hue-rotate(30deg) brightness(0.3) saturate(0.5);
+}
+
+/* Background orbs in cyber theme */
+:root.cyber-theme .orb {
+  filter: hue-rotate(-20deg) brightness(1.5) !important;
+  opacity: 0.1 !important;
+}
+
+:root.cyber-theme .profile-glow {
+  opacity: 0.05 !important;
+}
+
+:root.cyber-theme footer .bg-accent-primary\/10 {
+  background-color: rgba(255, 170, 0, 0.1) !important;
+}
+
+/* Cyber Grid UI */
+.cyber-grid,
+.section-grid {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0, 210, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 210, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 90%);
+  pointer-events: none;
+  z-index: -5;
+}
+
+:root.cyber-theme .cyber-grid,
+:root.cyber-theme .section-grid {
+  display: block;
+}
+
+.section-grid {
+  z-index: 0;
+  opacity: 0.5;
+}
+
+section {
+  position: relative;
+}
+
+/* Scanline effect */
+.scanlines {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      transparent 50%,
+      rgba(0, 210, 255, 0.02) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+:root.cyber-theme .scanlines {
+  display: block;
 }
 
 body {
@@ -53,19 +205,25 @@ body {
 }
 
 .glitch {
+  cursor: pointer;
   animation: glitch 1.5s linear infinite;
 }
 
 @keyframes glitch {
-  0%, 100% {
+
+  0%,
+  100% {
     text-shadow: -1.5px -1.5px 0 #0ff, 1.5px 1.5px 0 #f00;
   }
+
   25% {
     text-shadow: 1.5px 1.5px 0 #0ff, -1.5px -1.5px 0 #f00;
   }
+
   50% {
     text-shadow: 1.5px -1.5px 0 #0ff, -1.5px 1.5px 0 #f00;
   }
+
   75% {
     text-shadow: -1.5px 1.5px 0 #0ff, 1.5px -1.5px 0 #f00;
   }
@@ -138,9 +296,14 @@ body {
   background: transparent;
 }
 
-selection {
+::selection {
   background-color: var(--color-accent-primary);
   color: white;
+}
+
+:root.cyber-theme ::selection {
+  background-color: #00f3ff;
+  color: #000;
 }
 
 .mask-radial {
@@ -158,70 +321,195 @@ selection {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.js [data-animate="fade-up"].is-visible   { opacity: 1; transform: translateY(0); }
-.js [data-animate="fade-in"]              { transform: none; }
-.js [data-animate="fade-in"].is-visible   { opacity: 1; }
-.js [data-animate="scale-in"]             { transform: scale(0.92); }
-.js [data-animate="scale-in"].is-visible  { opacity: 1; transform: scale(1); }
-.js [data-animate="slide-left"]           { transform: translateX(-24px); }
-.js [data-animate="slide-left"].is-visible{ opacity: 1; transform: translateX(0); }
+
+.js [data-animate="fade-up"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js [data-animate="fade-in"] {
+  transform: none;
+}
+
+.js [data-animate="fade-in"].is-visible {
+  opacity: 1;
+}
+
+.js [data-animate="scale-in"] {
+  transform: scale(0.92);
+}
+
+.js [data-animate="scale-in"].is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.js [data-animate="slide-left"] {
+  transform: translateX(-24px);
+}
+
+.js [data-animate="slide-left"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 /* Stagger children — also scoped to .js */
-.js [data-stagger] > * {
+.js [data-stagger]>* {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.js [data-stagger].is-visible > *:nth-child(1)  { transition-delay: 0.05s; opacity: 1; transform: none; }
-.js [data-stagger].is-visible > *:nth-child(2)  { transition-delay: 0.10s; opacity: 1; transform: none; }
-.js [data-stagger].is-visible > *:nth-child(3)  { transition-delay: 0.15s; opacity: 1; transform: none; }
-.js [data-stagger].is-visible > *:nth-child(4)  { transition-delay: 0.20s; opacity: 1; transform: none; }
-.js [data-stagger].is-visible > *:nth-child(5)  { transition-delay: 0.25s; opacity: 1; transform: none; }
-.js [data-stagger].is-visible > *:nth-child(6)  { transition-delay: 0.30s; opacity: 1; transform: none; }
-.js [data-stagger].is-visible > *:nth-child(n+7){ transition-delay: 0.35s; opacity: 1; transform: none; }
+
+.js [data-stagger].is-visible>*:nth-child(1) {
+  transition-delay: 0.05s;
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-stagger].is-visible>*:nth-child(2) {
+  transition-delay: 0.10s;
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-stagger].is-visible>*:nth-child(3) {
+  transition-delay: 0.15s;
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-stagger].is-visible>*:nth-child(4) {
+  transition-delay: 0.20s;
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-stagger].is-visible>*:nth-child(5) {
+  transition-delay: 0.25s;
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-stagger].is-visible>*:nth-child(6) {
+  transition-delay: 0.30s;
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-stagger].is-visible>*:nth-child(n+7) {
+  transition-delay: 0.35s;
+  opacity: 1;
+  transform: none;
+}
 
 /* Hover utilities */
-.hover-lift { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-.hover-lift:hover { transform: translateY(-5px); }
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-.hover-scale { transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
-.hover-scale:hover  { transform: scale(1.05); }
-.hover-scale:active { transform: scale(0.95); }
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.hover-scale {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-scale:active {
+  transform: scale(0.95);
+}
 
 /* Copy feedback */
 @keyframes pop-in {
-  from { opacity: 0; transform: scale(0.6); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
-.animate-pop-in { animation: pop-in 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+.animate-pop-in {
+  animation: pop-in 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
 
 /* Background orbs (particles.jsx) */
 @keyframes orb1 {
-  0%   { transform: translate(0,0) scale(1); }
-  33%  { transform: translate(100px,50px) scale(1.2); }
-  66%  { transform: translate(50px,-30px) scale(0.9); }
-  100% { transform: translate(0,0) scale(1); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(100px, 50px) scale(1.2);
+  }
+
+  66% {
+    transform: translate(50px, -30px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }
+
 @keyframes orb2 {
-  0%   { transform: translate(0,0) scale(1.2); }
-  33%  { transform: translate(-100px,100px) scale(1); }
-  66%  { transform: translate(-50px,50px) scale(1.15); }
-  100% { transform: translate(0,0) scale(1.2); }
+  0% {
+    transform: translate(0, 0) scale(1.2);
+  }
+
+  33% {
+    transform: translate(-100px, 100px) scale(1);
+  }
+
+  66% {
+    transform: translate(-50px, 50px) scale(1.15);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1.2);
+  }
 }
 
 /* Hero entry stagger (landing.jsx) */
 @keyframes hero-fade-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 .js .hero-item {
   opacity: 0;
   animation: hero-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.hero-item:nth-child(1) { animation-delay: 0.2s; }
-.hero-item:nth-child(2) { animation-delay: 0.35s; }
-.hero-item:nth-child(3) { animation-delay: 0.5s; }
-.hero-container > .hero-item { animation-delay: 0.65s; }
+
+.hero-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.hero-item:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+.hero-item:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.hero-container>.hero-item {
+  animation-delay: 0.65s;
+}

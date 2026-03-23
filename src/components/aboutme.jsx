@@ -21,9 +21,10 @@ const FocusSection = ({ title, items }) => (
 export default function AboutMe() {
   return (
     <section id='aboutme' data-animate="fade-up" className="flex flex-col gap-12 bg-transparent text-font-color relative z-20 px-6 py-8 pt-12 sm:pt-28">
+      <div className="section-grid"></div>
       <div className="flex flex-col items-center md:flex-row gap-12 lg:gap-20 max-w-7xl mx-auto">
         <div data-animate="scale-in" className="md:self-start lg:sticky lg:top-28 w-[20em]">
-          <div className="absolute -inset-4 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-[40px] opacity-20 blur-2xl"></div>
+          <div className="absolute -inset-4 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-[40px] opacity-20 blur-2xl profile-glow"></div>
           <div className="relative rounded-[32px] overflow-hidden aspect-[4/5] border border-white/10 glass">
             <img
               src={profileData.image}
@@ -32,7 +33,7 @@ export default function AboutMe() {
               decoding="async"
               width="128"
               height="128"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover profile-img"
             />
           </div>
         </div>
@@ -59,7 +60,7 @@ export default function AboutMe() {
 
           <div className="flex flex-wrap gap-4 mt-4">
             <a target="_blank" rel="noopener noreferrer" aria-label="See full Resume" href={profileData.resume}
-              className="hover-scale flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 border-white/20 rounded-2xl font-bold transition-colors duration-300">
+              className="hover-scale flex items-center gap-2 px-6 py-3 glass hover:bg-white/10 border-white/20 rounded-2xl font-bold transition-colors duration-300">
               See full Resume <MdArrowOutward size={20} className="text-white/60" />
             </a>
           </div>

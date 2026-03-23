@@ -21,7 +21,7 @@ export function TechIcon({ techKey, isActive, isDimmed }) {
       <div className="w-16 h-16 glass rounded-2xl border-white/5 flex items-center justify-center p-3.5 transition-all duration-500 group-hover:border-accent-primary/50 group-hover:bg-accent-primary/5">
         <img src={tech.src} alt={tech.title}
           loading="lazy" decoding="async"
-          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 no-tint"
           style={{ borderRadius: tech?.radius || 0 }} />
       </div>
       <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-3 py-1 glass rounded-lg border-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
@@ -53,6 +53,7 @@ export default function TechStack() {
 
   return (
     <section id='techstack' className="flex flex-col gap-22 overflow-hidden pt-16 pb-16 sm:pt-32 sm:pb-28">
+      <div className="section-grid"></div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
         <div data-animate="fade-up" className="flex flex-col gap-4 text-center items-center">
           <div className="flex items-center gap-4">

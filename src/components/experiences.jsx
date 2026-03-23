@@ -7,6 +7,7 @@ import { relativeDate, getDateDifference } from "../utils/dateMethods";
 export default function Experiences() {
   return (
     <section id='experiences' className="flex flex-col gap-12 px-6 md:px-12 py-8 sm:pt-26">
+      <div className="section-grid"></div>
       <div data-animate="slide-left" className="flex flex-col gap-3">
         <div className="flex items-center gap-4">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
@@ -27,7 +28,7 @@ export default function Experiences() {
             key={experience.name}
             className={`relative flex flex-col sm:flex-row gap-8 sm:gap-0 items-start ${(index % 2) === 1 ? 'sm:flex-row-reverse' : ''}`}
           >
-            <div className="absolute left-0 sm:left-1/2 top-1.5 -translate-x-1/2 w-3 h-3 rounded-full bg-background-color border-2 border-accent-primary/50 z-10 shadow-[0_0_15px_rgba(99,102,241,0.3)] hidden sm:block"></div>
+            <div className="absolute left-0 sm:left-1/2 top-1.5 -translate-x-1/2 w-3 h-3 rounded-full bg-background-color border-2 border-accent-primary/50 z-10 shadow-[0_0_15px_var(--shadow-accent)] hidden sm:block"></div>
 
             <div className="w-full sm:w-[45%]">
               <div className="glass p-6 rounded-[24px] border-white/5 hover:border-accent-primary/20 transition-all duration-500 group">
@@ -35,7 +36,7 @@ export default function Experiences() {
                   <div className="flex items-center gap-3">
                     <div className="relative p-1 rounded-xl bg-white/5 border border-white/5">
                       <img loading='lazy' decoding="async" alt={experience.name} src={experience.icon}
-                        className="w-10 h-10 object-contain rounded-lg" />
+                        className="w-10 h-10 object-contain rounded-lg no-tint" />
                     </div>
                     <div className="flex flex-col">
                       <h3 className="text-lg font-extrabold text-white">{experience.positions[0].role}</h3>

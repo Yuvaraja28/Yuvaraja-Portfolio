@@ -1,28 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import profileData from '../data/profileData';
 import ModernBackground from './particles.jsx';
 import socialsData, { socials } from '.././data/socialsData';
 
 export default function Landing() {
+  const [isCyber, setIsCyber] = useState(false);
+
+  useEffect(() => {
+    // Sync state with DOM in case it's already set (e.g. from a previous click)
+    setIsCyber(document.documentElement.classList.contains('cyber-theme'));
+  }, []);
+
+  const toggleCyberTheme = () => {
+    const newState = !isCyber;
+    setIsCyber(newState);
+    document.documentElement.classList.toggle('cyber-theme', newState);
+  };
+
   return (
     <div className='relative w-full h-full px-6 lg:px-12 flex flex-col overflow-hidden'>
-      <ModernBackground />
+      <ModernBackground isCyber={isCyber} />
 
-      <div className="hero-container flex-1 flex flex-col justify-center items-center gap-8 text-center z-10 py-12">
-        <div className="flex flex-col gap-8 sm:gap-6 max-w-5xl mx-auto">
+      <div className="hero-container flex-1 flex flex-col justify-center items-center gap-5 text-center z-10 py-12">
+        <div className="flex flex-col gap-6 max-w-5xl mx-auto">
           <div className="hero-item flex items-center justify-center">
-            <span className="px-4 py-1.5 rounded-full glass text-[12px] font-bold tracking-[0.2em] uppercase flex items-center gap-3">
+            <span className="px-4 py-1.5 rounded-full glass text-[12px] font-bold tracking-[0.2em] uppercase flex items-center gap-3 select-none">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-40 animate-ping"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-primary"></span>
               </span>
-              {profileData.tags[0]}<span className="text-accent-primary">.</span><span className="glitch">{profileData.tags[1]}</span><span className="text-accent-primary">.</span>{profileData.tags[2]}
+              {profileData.tags[0]}<span className="text-accent-primary">.</span><span className="glitch" onClick={toggleCyberTheme}>{profileData.tags[1]}</span><span className="text-accent-primary">.</span>{profileData.tags[2]}
             </span>
           </div>
 
-          <h1 className="hero-item text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05]">
-            Architecting <span className="text-gradient">Digital Experiences</span> <br />
-            with precision and <span className="italic font-light">purpose</span>.
+          <h1 className="hero-item text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05]">
+            {isCyber ? (
+              <>
+                Engineering <span className="text-gradient">Resilient Systems</span> <br />
+                through <span className="italic font-light">deep security</span>.
+              </>
+            ) : (
+              <>
+                Architecting <span className="text-gradient">Digital Experiences</span> <br />
+                with precision and <span className="italic font-light">purpose</span>.
+              </>
+            )}
           </h1>
 
           <p className="hero-item text-base md:text-lg lg:text-xl font-medium text-white/50 max-w-2xl mx-auto leading-relaxed">
@@ -30,7 +52,7 @@ export default function Landing() {
           </p>
         </div>
 
-        <div className="hero-item flex flex-col sm:flex-row items-center gap-8 sm:gap-6">
+        <div className="hero-item flex flex-col sm:flex-row items-center gap-6">
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -50,7 +72,7 @@ export default function Landing() {
                 className="hover-scale p-2.5 rounded-lg transition-colors duration-200 text-white/40 hover:text-white hover:bg-white/5"
                 aria-label={`Visit ${social.social}`}
               >
-                <social.comp size={20} />
+                <social.comp size={20} className="no-tint" />
               </a>
             ))}
           </div>
