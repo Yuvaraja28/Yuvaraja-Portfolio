@@ -1,7 +1,7 @@
 import { FiGlobe } from "react-icons/fi";
-import { SiCodechef, SiLeetcode } from "react-icons/si";
+import { SiLeetcode } from "react-icons/si";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
-import { FaYoutube, FaGithub, FaLinkedin, FaDiscord, FaInstagram, FaPaypal, FaTwitter } from "react-icons/fa";
+import { FaYoutube, FaGithub, FaLinkedin, FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 
 export const socials = {
   web: {

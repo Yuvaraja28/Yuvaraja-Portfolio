@@ -35,7 +35,7 @@ export default function Experiences() {
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-3">
                     <div className="relative p-1 rounded-xl bg-white/5 border border-white/5">
-                      <img loading='lazy' decoding="async" alt={experience.name} src={experience.icon}
+                      <img loading='lazy' decoding="async" alt={experience.name} src={`${import.meta.env.PUBLIC_CDN_URL}${experience.icon}`}
                         className="w-10 h-10 object-contain rounded-lg no-tint" />
                     </div>
                     <div className="flex flex-col">

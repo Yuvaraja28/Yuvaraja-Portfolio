@@ -1,6 +1,6 @@
 import react from '@astrojs/react';
-import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { defineConfig, envField } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,5 +11,10 @@ export default defineConfig({
     server: {
       allowedHosts: []
     }
-  }
+  },
+  env: {
+    schema: {
+      PUBLIC_CDN_URL: envField.string({ context: 'client', access: 'public' }),
+    },
+  },
 });

@@ -2,15 +2,7 @@ const projectsData = {
   mitilence: {
     name: "Mitilence'25",
     title: "MVIT",
-    showcase: "assets/projects/mitilence/mitilence-banner.png",
-    banner: [
-      "assets/projects/mitilence/mitilence-banner.png",
-      "https://www.youtube.com/embed/eGJpRt2c2no?si=yqYhNTA0rwPbkJ80",
-      "assets/projects/mitilence/mitilence-banner-2.png",
-      "assets/projects/mitilence/mitilence-banner-3.png",
-      "assets/projects/mitilence/mitilence-banner-4.png",
-      "assets/projects/mitilence/mitilence-figma.jpeg",
-    ],
+    bannerImagesCount: 5,
     links: [
       {
         name: "web",
@@ -32,14 +24,7 @@ const projectsData = {
   devley: {
     name: "Devley",
     title: "Digital Marketplace",
-    showcase: "assets/projects/devley/devley-banner.png",
-    banner: [
-      "assets/projects/devley/devley-banner.png",
-      "assets/projects/devley/devley-banner-2.png",
-      "assets/projects/devley/devley-banner-3.png",
-      "assets/projects/devley/devley-banner-4.png",
-      "assets/projects/devley/devley-banner-5.png",
-    ],
+    bannerImagesCount: 5,
     links: [
       {
         name: "web",
@@ -64,8 +49,7 @@ const projectsData = {
   pts: {
     name: "Pterodactyl Trial Servers",
     title: "Cloud Servers",
-    showcase: "assets/projects/trial-servers/trial-servers-banner.png",
-    banner: ["assets/projects/trial-servers/trial-servers-banner.png"],
+    bannerImagesCount: 1,
     links: [
       {
         name: "github",
@@ -91,15 +75,7 @@ const projectsData = {
   ridemap: {
     name: "Ridemap",
     title: "Mobile App",
-    showcase: "assets/projects/ridemap/ridemap.png",
-    banner: [
-      "assets/projects/ridemap/ridemap.png",
-      "assets/projects/ridemap/ridemap-2.png",
-      "assets/projects/ridemap/ridemap-3.png",
-      "assets/projects/ridemap/ridemap-4.png",
-      "assets/projects/ridemap/ridemap-5.png",
-      "assets/projects/ridemap/ridemap-6.png",
-    ],
+    bannerImagesCount: 6,
     links: [
       {
         name: "playstore",
@@ -123,19 +99,7 @@ const projectsData = {
   dojo: {
     name: "Dojo 2.0",
     title: "Lucas TVS",
-    showcase: "assets/projects/dojo/dojo-banner.png",
-    banner: [
-      "assets/projects/dojo/dojo.png",
-      "assets/projects/dojo/dojo-banner.png",
-      "assets/projects/dojo/dojo-banner-2.png",
-      "assets/projects/dojo/dojo-banner-3.png",
-      "assets/projects/dojo/dojo-banner-4.png",
-      "assets/projects/dojo/dojo-banner-5.png",
-      "assets/projects/dojo/dojo-banner-6.png",
-      "assets/projects/dojo/dojo-banner-7.png",
-      "assets/projects/dojo/dojo-banner-8.png",
-      "assets/projects/dojo/dojo-banner-9.png",
-    ],
+    bannerImagesCount: 10,
     links: [
       {
         name: "web",
@@ -158,11 +122,7 @@ const projectsData = {
   printa4: {
     name: "PrintA4",
     title: "Kiosk Printing Solution",
-    showcase: "assets/projects/printa4/printa4-banner.png",
-    banner: [
-      "assets/projects/printa4/printa4-banner.png",
-      "assets/projects/printa4/printa4-banner-2.png",
-    ],
+    bannerImagesCount: 2,
     links: [
       {
         name: "web",
@@ -183,8 +143,7 @@ const projectsData = {
   fic: {
     name: "Frix Cloud",
     title: "Remote Server Management",
-    showcase: "assets/projects/frix-cloud/frix-cloud-banner.png",
-    banner: ["assets/projects/frix-cloud/frix-cloud-banner.png"],
+    bannerImagesCount: 1,
     links: [
       {
         name: "github",
@@ -198,14 +157,7 @@ const projectsData = {
   bvault: {
     name: "Books Vault",
     title: "Book Purchase",
-    showcase: "assets/projects/bvault/bvault-banner.png",
-    banner: [
-      "assets/projects/bvault/bvault-banner.png",
-      "assets/projects/bvault/bvault-banner-2.png",
-      "assets/projects/bvault/bvault-banner-3.png",
-      "assets/projects/bvault/bvault-banner-4.png",
-      "assets/projects/bvault/bvault-banner-5.png",
-    ],
+    bannerImagesCount: 5,
     links: [
       {
         name: "github",
@@ -216,16 +168,10 @@ const projectsData = {
     description:
       "Booksvault is an online platform for buying and managing books, offering new, second-hand, and rental options. Customers can order by providing their details and pay via Cash on Delivery (COD). A rental system also lets users borrow books for a set period.",
   },
-  flick: {
+  flicksnack: {
     name: "Flicksnack",
     title: "Food Counter Booking",
-    showcase: "assets/projects/flicksnack/flicksnack-banner.png",
-    banner: [
-      "assets/projects/flicksnack/flicksnack-banner-2.png",
-      "assets/projects/flicksnack/flicksnack-banner-3.png",
-      "assets/projects/flicksnack/flicksnack-banner-4.png",
-      "assets/projects/flicksnack/flicksnack-banner-5.png",
-    ],
+    bannerImagesCount: 4,
     links: [
       {
         name: "github",
@@ -236,11 +182,10 @@ const projectsData = {
     description:
       "FlickSnack is a user-friendly theatre food booking app that streamlines food ordering for moviegoers. Users browse, select, and add food to a virtual cart. After confirming, they receive a digital token as proof of purchase.",
   },
-  tds: {
+  td: {
     name: "TD Problem Solver",
     title: "Thermodynamics",
-    showcase: "assets/projects/td/td-banner.png",
-    banner: ["assets/projects/td/td-banner.png"],
+    bannerImagesCount: 1,
     links: [
       {
         name: "web",
@@ -258,13 +203,7 @@ const projectsData = {
   stc: {
     active: true,
     name: "Student Connect",
-    showcase: "assets/projects/students-connect/students-connect-banner.png",
-    banner: [
-      "assets/projects/students-connect/students-connect-banner.png",
-      "assets/projects/students-connect/students-connect-2.png",
-      "assets/projects/students-connect/students-connect-3.png",
-      "assets/projects/students-connect/students-connect-4.png",
-    ],
+    bannerImagesCount: 4,
     links: [
       {
         name: "github",
@@ -278,13 +217,13 @@ const projectsData = {
   blc: {
     active: false,
     name: "Block Chat",
+    bannerImagesCount: 0,
     links: [
       {
         name: "github",
         url: "https://github.com/Yuvaraja28/BlockChat",
       },
     ],
-    showcase: "",
     technologies: ["py", "next", "node", "css", "websocket", "git"],
     description:
       "This is Chat WebApp Project based on blockchain Technology which creates Hash value and validates it with each and every block of message before sending it to other clients",
@@ -292,8 +231,7 @@ const projectsData = {
   dip: {
     name: "Diso Player",
     title: "Spotify Inspired",
-    showcase: "assets/projects/disco-player/disco-player-banner.png",
-    banner: ["assets/projects/disco-player/disco-player-banner.png"],
+    bannerImagesCount: 1,
     links: [
       {
         name: "web",

@@ -32,14 +32,11 @@ export default function Projects() {
             className="hover-lift group relative cursor-pointer glass rounded-[24px] overflow-hidden border-white/5 hover:border-accent-primary/20 transition-colors duration-500 shadow-2xl flex flex-col h-full"
           >
             <div className="relative aspect-[16/10] overflow-hidden bg-white/5 min-h-[200px]">
-              {project.showcase ? (
-                <img src={project.showcase} alt={project.name} loading="lazy" decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 no-tint" />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-white/5 text-xs font-bold uppercase tracking-widest">
-                  No Preview Available
-                </div>
-              )}
+              <img
+                src={`${import.meta.env.PUBLIC_CDN_URL}/projects/${projectKey}/${projectKey}-1.png`}
+                alt={project.name} loading="lazy" decoding="async"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 no-tint"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background-color/90 via-background-color/10 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
               <div className="absolute top-4 right-4">
                 <div className="p-2.5 rounded-xl glass border-white/5 text-white/50 group-hover:text-white group-hover:bg-accent-primary transition-all duration-300">

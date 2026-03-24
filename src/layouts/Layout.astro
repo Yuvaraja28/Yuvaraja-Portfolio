@@ -2,10 +2,13 @@
 import "../index.css";
 
 interface Props {
-  title: string;
+  fullName: string;
+  keywords: string;
+  profileImage: string;
+  metaDescription: string;
 }
 
-const { title } = Astro.props;
+const { fullName, metaDescription, profileImage, keywords } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,60 +19,31 @@ const { title } = Astro.props;
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="author" content="Yuvaraja Murali" />
+    <title>{fullName}</title>
+    <meta name="author" content={fullName} />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://yuv.1he.dev/" />
-    <meta
-      name="keywords"
-      content="Yuvaraja, Yuvaraja Murali, Yuvaraja28, yuv the dev, yuv.the.dev, full-stack developer, cybersecurity, security researcher, secure software engineering, TCS, HackQuest, React, Next.js, Python, TypeScript, MongoDB, Linux, DevSecOps, AI, face recognition"
-    />
-    <meta property="og:title" content="Yuvaraja Murali" />
-    <meta name="twitter:title" content="Yuvaraja Murali" />
+    <link rel="canonical" href={Astro.url.href} />
+    <meta name="keywords" content={keywords} />
+    <meta property="og:title" content={fullName} />
+    <meta name="twitter:title" content={fullName} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Yuvaraja Murali" />
-    <meta
-      name="description"
-      content="Security-focused full-stack engineer joining TCS's Cyber Security unit via HackQuest S10 Prime (Top 75). I build resilient, production-grade applications with a security-first mindset — across React, Next.js, Python, and MongoDB."
-    />
-    <meta
-      property="og:description"
-      content="Security-focused full-stack engineer joining TCS's Cyber Security unit via HackQuest S10 Prime (Top 75). I build resilient, production-grade applications with a security-first mindset — across React, Next.js, Python, and MongoDB."
-    />
-    <meta
-      name="twitter:description"
-      content="Security-focused full-stack engineer joining TCS's Cyber Security unit via HackQuest S10 Prime (Top 75). I build resilient, production-grade applications with a security-first mindset — across React, Next.js, Python, and MongoDB."
-    />
+    <meta property="og:site_name" content={fullName} />
+    <meta name="description" content={metaDescription} />
+    <meta property="og:description" content={metaDescription} />
+    <meta name="twitter:description" content={metaDescription} />
     <meta name="theme-color" content="#f3e8c9" />
-    <meta property="og:image" content="https://yuv.1he.dev/yuvaraja.png" />
-    <meta name="twitter:image" content="https://yuv.1he.dev/yuvaraja.png" />
+    <meta property="og:image" content={profileImage} />
+    <meta name="twitter:image" content={profileImage} />
     <meta property="og:type" content="website" />
-    <link rel="icon" type="image/ico" href="https://yuv.1he.dev/favicon.ico" />
+    <link rel="icon" type="image/ico" href={`${Astro.url.href}/favicon.ico`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Yuvaraja Murali",
-        "url": "https://yuv.1he.dev",
-        "jobTitle": "Systems Engineer — Cyber Security",
-        "description": "Security-focused full-stack engineer joining TCS's Cyber Security unit via HackQuest S10 Prime (Top 75). I build resilient, production-grade applications with a security-first mindset — across React, Next.js, Python, and MongoDB.",
-        "logo": "https://yuv.1he.dev/favicon.ico",
-        "sameAs": [
-          "mailto:yuv.the.dev@gmail.com",
-          "https://github.com/Yuvaraja28",
-          "https://www.linkedin.com/in/yuvaraja-murali",
-          "https://x.com/yuvaraja_28"
-        ]
-      }
-    </script>
   </head>
   <body>
     <div class="scanlines"></div>

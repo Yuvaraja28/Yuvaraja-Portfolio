@@ -1,9 +1,9 @@
 import React from "react";
-import { motion, AnimatePresence } from "motion/react";
 import { SocialBubbleBG } from "./socials";
 import { socials } from "../data/socialsData";
 import projectsData from "../data/projectsData";
 import { technologies } from "../data/techStackData";
+import { motion, AnimatePresence } from "motion/react";
 import { MdClose, MdChevronLeft, MdChevronRight, MdOpenInNew } from "react-icons/md";
 
 export default function ProjectDialog({ id }) {
@@ -15,12 +15,12 @@ export default function ProjectDialog({ id }) {
 
   const nextImage = (e) => {
     e?.stopPropagation();
-    setCurrentImageIndex((prev) => (prev < project.banner.length - 1 ? prev + 1 : 0));
+    setCurrentImageIndex((prev) => (prev < project.bannerImagesCount - 1 ? prev + 1 : 0));
   };
 
   const prevImage = (e) => {
     e?.stopPropagation();
-    setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : project.banner.length - 1));
+    setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : project.bannerImagesCount - 1));
   };
 
   React.useEffect(() => {
@@ -65,25 +65,17 @@ export default function ProjectDialog({ id }) {
                 exit={{ opacity: 0 }}
                 className="w-full h-full p-4 lg:p-12"
               >
-                {project.banner[currentImageIndex].includes("youtube") ? (
-                  <iframe
-                    src={project.banner[currentImageIndex]}
-                    className="w-full h-full rounded-xl shadow-2xl"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share"
-                  />
-                ) : (
-                  <img
-                    src={project.banner[currentImageIndex]}
-                    alt={project.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-contain rounded-xl shadow-2xl no-tint"
-                  />
-                )}
+                <img
+                  alt={project.name}
+                  loading="lazy"
+                  decoding="async"
+                  src={`${import.meta.env.PUBLIC_CDN_URL}/projects/${id}/${id}-${currentImageIndex + 1}.png`}
+                  className="w-full h-full object-contain rounded-xl shadow-2xl no-tint"
+                />
               </motion.div>
             </AnimatePresence>
 
-            {project.banner.length > 1 && (
+            {project.bannerImagesCount > 1 && (
               <>
                 <button onClick={prevImage} className="absolute left-6 p-2 rounded-full glass hover:bg-accent-primary/20 text-white/50 hover:text-white transition-all cursor-pointer">
                   <MdChevronLeft size={28} />
@@ -95,9 +87,9 @@ export default function ProjectDialog({ id }) {
             )}
           </div>
 
-          {project.banner.length > 1 && (
+          {project.bannerImagesCount > 1 && (
             <div className="pb-6 flex justify-center gap-2">
-              {project.banner.map((_, idx) => (
+              {Array.from({ length: project.bannerImagesCount }).map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentImageIndex(idx)}

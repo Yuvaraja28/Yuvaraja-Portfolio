@@ -27,7 +27,7 @@ export default function AboutMe() {
           <div className="absolute -inset-4 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-[40px] opacity-20 blur-2xl profile-glow"></div>
           <div className="relative rounded-[32px] overflow-hidden aspect-[4/5] border border-white/10 glass">
             <img
-              src={profileData.image}
+              src={`${import.meta.env.PUBLIC_CDN_URL}${profileData.image}`}
               alt={profileData.fullName}
               loading='lazy'
               decoding="async"
@@ -59,7 +59,7 @@ export default function AboutMe() {
           </div>
 
           <div className="flex flex-wrap gap-4 mt-4">
-            <a target="_blank" rel="noopener noreferrer" aria-label="See full Resume" href={profileData.resume}
+            <a target="_blank" rel="noopener noreferrer" aria-label="See full Resume" href={`${import.meta.env.PUBLIC_CDN_URL}${profileData.resume}`}
               className="hover-scale flex items-center gap-2 px-6 py-3 glass hover:bg-white/10 border-white/20 rounded-2xl font-bold transition-colors duration-300">
               See full Resume <MdArrowOutward size={20} className="text-white/60" />
             </a>

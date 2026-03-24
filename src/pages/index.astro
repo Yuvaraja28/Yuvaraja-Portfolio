@@ -7,11 +7,17 @@ import Landing from "../components/landing.jsx";
 import Projects from "../components/projects.jsx";
 import Spotlight from "../components/spotlight.jsx";
 import TechStack from "../components/techStack.jsx";
+import profileData from "../data/profileData.js";
 import Experiences from "../components/experiences.jsx";
 import ProjectDialogWrapper from "../components/ProjectDialogWrapper.jsx";
 ---
 
-<Layout title="Yuvaraja Murali">
+<Layout
+  fullName={profileData.fullName}
+  keywords={profileData.keywords}
+  metaDescription={profileData.metaDescription}
+  profileImage={`${import.meta.env.PUBLIC_CDN_URL}${profileData.image}`}
+>
   <div
     class="relative bg-background-color selection:bg-accent-primary selection:text-white min-h-screen"
   >

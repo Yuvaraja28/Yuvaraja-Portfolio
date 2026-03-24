@@ -126,7 +126,7 @@ export default function Spotlight() {
                     className="w-full h-full"
                   >
                     <img
-                      src={event.image}
+                      src={`${import.meta.env.PUBLIC_CDN_URL}${event.image}`}
                       alt={event.title}
                       loading="lazy"
                       decoding="async"

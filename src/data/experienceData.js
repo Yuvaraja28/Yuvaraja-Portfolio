@@ -5,7 +5,7 @@ const experienceData = [
     location: 'Chennai, India',
     mode: 'On-Site',
     type: 'Internship',
-    icon: 'assets/experiences/zoho/zoho.png',
+    icon: '/experiences/zoho/zoho.png',
     positions: [
       {
         role: 'Incubation Trainee',
@@ -28,7 +28,7 @@ const experienceData = [
     location: 'Pondicherry, India',
     mode: 'On-Site',
     type: 'Internship',
-    icon: 'assets/experiences/ignite/ignite.png',
+    icon: '/experiences/ignite/ignite.png',
     color: '#ff0000',
     positions: [
       {
@@ -72,7 +72,7 @@ const experienceData = [
   //   location: 'India',
   //   mode: 'Remote',
   //   type: 'Freelance',
-  //   icon: 'assets/experiences/devley/devley.png',
+  //   icon: '/experiences/devley/devley.png',
   //   color: '#0000ff',
   //   positions: [
   //     {

@@ -82,7 +82,7 @@ export default function Landing() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href={profileData.resume}
+            href={`${import.meta.env.PUBLIC_CDN_URL}${profileData.resume}`}
             className="hover-scale px-10 py-3 bg-white text-black font-bold rounded-xl text-sm shadow-[0_10px_20px_-10px_rgba(255,255,255,0.3)] hover:shadow-[0_15px_30px_-10px_rgba(255,255,255,0.4)] transition-shadow duration-300"
           >
             View My Resume
