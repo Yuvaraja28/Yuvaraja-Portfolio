@@ -103,6 +103,17 @@ export default function Spotlight() {
                     mass: 1,
                     restDelta: 0.001
                   }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  whileDrag={{ cursor: "grabbing" }}
+                  onDragEnd={(e, { offset, velocity }) => {
+                    const swipeThreshold = 50;
+                    if (offset.x < -swipeThreshold) {
+                      nextStep();
+                    } else if (offset.x > swipeThreshold) {
+                      prevStep();
+                    }
+                  }}
                   onClick={() => position !== 0 && setIndex(i)}
                   className={`absolute w-[380px] sm:w-[580px] aspect-video sm:aspect-[16/11] rounded-[32px] overflow-hidden glass border-white/5 shadow-2xl cursor-pointer isolate will-change-transform transform-gpu`}
                   style={{ translateZ: 0 }}

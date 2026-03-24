@@ -243,6 +243,11 @@ export const technologies = {
     title: "Deluge",
     link: 'https://www.zoho.com/deluge/',
     src: 'https://www.zohowebstatic.com/sites/zweb/images/productlogos/deluge-dark.svg'
+  },
+  astro: {
+    title: "Astro",
+    link: 'https://astro.build/',
+    src: 'https://astro.build/favicon.svg'
   }
 }
 
@@ -266,6 +271,7 @@ const techStackData = [
     stack: [
       'next',
       'react',
+      'astro',
       'redux',
       'html',
       'css',
