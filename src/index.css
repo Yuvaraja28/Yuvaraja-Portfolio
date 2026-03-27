@@ -72,12 +72,17 @@
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
 }
 
 :root.cyber-theme * {
   font-family: "Space Mono", monospace !important;
   text-shadow: 0 0 4px rgba(255, 170, 0, 0.2);
+  /* Only apply transitions for theme switching if needed, but avoid * to prevent issues with motion */
+}
+
+/* Base transitions for theme-sensitive properties where motion is NOT used */
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 :root.cyber-theme .glass {

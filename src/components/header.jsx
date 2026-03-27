@@ -1,24 +1,55 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { motion, useScroll, useMotionValueEvent } from 'motion/react';
 import profileData from '../data/profileData';
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
+  const { scrollY } = useScroll();
 
-  useEffect(() => {
-    const onScroll = () => setIsSticky(window.scrollY > 600);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsSticky(latest > 50);
+  });
+
+  const headerVariants = {
+    top: {
+      width: '100%',
+      maxWidth: '1400px',
+      y: 0,
+      paddingLeft: '32px',
+      paddingRight: '32px',
+      paddingTop: '32px',
+      paddingBottom: '16px',
+      backgroundColor: 'rgba(255, 255, 255, 0)',
+      borderColor: 'rgba(255, 255, 255, 0)',
+      backdropFilter: 'blur(0px)',
+    },
+    sticky: {
+      width: '90%',
+      maxWidth: '800px',
+      y: 20,
+      paddingLeft: '22px',
+      paddingRight: '22px',
+      paddingTop: '10px',
+      paddingBottom: '10px',
+      backgroundColor: 'rgba(255, 255, 255, 0.06)',
+      borderColor: 'rgba(255, 255, 255, 0.1)',
+      backdropFilter: 'blur(32px)',
+    }
+  };
 
   return (
     <div className="fixed top-0 left-0 w-full z-[100] flex justify-center pointer-events-none">
-      <header
-        className={`flex items-center justify-between gap-6 border pointer-events-auto overflow-hidden rounded-[28px] transition-[width,max-width,padding,background-color,border-color,backdrop-filter,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isSticky
-            ? 'w-[90%] max-w-[800px] translate-y-5 px-[22px] py-2 bg-white/[0.06] border-white/10 backdrop-blur-[32px]'
-            : 'w-full max-w-[1400px] translate-y-0 px-8 pt-8 pb-4 bg-transparent border-transparent backdrop-blur-none'
-        }`}
+      <motion.header
+        initial="top"
+        animate={isSticky ? "sticky" : "top"}
+        variants={headerVariants}
+        transition={{
+          type: 'spring',
+          stiffness: 260,
+          damping: 30,
+          mass: 1,
+        }}
+        className="flex items-center justify-between gap-6 border pointer-events-auto overflow-hidden rounded-[28px] !transition-none"
       >
         <a
           href="/"
@@ -43,7 +74,7 @@ export default function Header() {
         >
           Hire Me
         </a>
-      </header>
+      </motion.header>
     </div>
   )
 }
